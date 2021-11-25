@@ -78,7 +78,7 @@
              
   <section id="launching-a-pipeline">
 <span id="second-page"></span><h1>Launching a pipeline<a class="headerlink" href="#launching-a-pipeline" title="Permalink to this headline"></a></h1>
-<p>You can launch a pipeline by simply executing this code</p>
+<p>You can launch a Nextflow pipeline by simply executing this code</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run PIPELINENAME.nf</span>
 </pre></div>
 </div>
@@ -108,7 +108,7 @@ The default platform is <strong>GitHub</strong>, so we will use this repository 
 </tbody>
 </table>
 <p>We can launch the pipeline just by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -r main</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r main</span>
 </pre></div>
 </div>
 <p>In this way Nextflow will pull the pipeline from the GitHub repository, store it at <code class="docutils literal notranslate"><span class="pre">$PATH/.nextflow/assets</span></code> and launch it.</p>
@@ -144,30 +144,30 @@ For this we need to tell Nextflow which is the right container engine. We can do
 </tbody>
 </table>
 <p>In this example we will use <a class="reference external" href="https://www.docker.com/">Docker</a>: the default image is stored in <a class="reference external" href="https://hub.docker.com/">DockerHub</a> and is retrieved on the fly.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -r main -with-docker</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r main -with-docker</span>
 
 <span class="go">N E X T F L O W  ~  version 21.04.3</span>
-<span class="go">Pulling lucacozzuto/elixir_NF ...</span>
-<span class="go">downloaded from https://github.com/lucacozzuto/elixir_NF.git</span>
-<span class="go">Launching `lucacozzuto/elixir_NF` [determined_minsky] - revision: 711f9f806d [main]</span>
+<span class="go">Pulling nextflow-io/elixir-workshop-21 ...</span>
+<span class="go">downloaded from https://nextflow-io/elixir-workshop-21.git</span>
+<span class="go">Launching `nextflow-io/elixir-workshop-21` [determined_minsky] - revision: 711f9f806d [main]</span>
 
 <span class="go">BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
 <span class="go">=============================================</span>
-<span class="go">reads                           : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/*.fastq.gz</span>
-<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
-<span class="go">output                          : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/output</span>
+<span class="go">reads                           : /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/data/*.fastq.gz</span>
+<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz</span>
+<span class="go">output                          : /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/output</span>
 
 <span class="go">executor &gt;  local (3)</span>
 <span class="go">[2f/6cd1ca] process &gt; fastqc (B7_H3K4me1_s_chr19.fastq.gz) [100%] 2 of 2 ✔</span>
 <span class="go">[a2/305aae] process &gt; BOWTIE:Index (chr19.fasta.gz)        [  0%] 0 of 1</span>
 <span class="go">[79/f30f70] process &gt; BOWTIE:Align (B7_H3K4me1_s_chr19.fastq.gz) [100%] 2 of 2 ✔</span>
 <span class="go">[50/088302] process &gt; multiqc                                    [100%] 1 of 1 ✔</span>
-<span class="go">/Users/lcozzuto/ooo/work/27/f1cc39c1e01c9ee55684b347c492f5/B7_input_s_chr19.fastq.gz.sam</span>
-<span class="go">/Users/lcozzuto/ooo/work/27/f1cc39c1e01c9ee55684b347c492f5/B7_input_s_chr19.fastq.gz.log</span>
-<span class="go">/Users/lcozzuto/ooo/work/79/f30f7041abf5baf7c496a0982906c1/B7_H3K4me1_s_chr19.fastq.gz.sam</span>
-<span class="go">/Users/lcozzuto/ooo/work/79/f30f7041abf5baf7c496a0982906c1/B7_H3K4me1_s_chr19.fastq.gz.log</span>
+<span class="go">/Users/lcozzuto/work/27/f1cc39c1e01c9ee55684b347c492f5/B7_input_s_chr19.fastq.gz.sam</span>
+<span class="go">/Users/lcozzuto/work/27/f1cc39c1e01c9ee55684b347c492f5/B7_input_s_chr19.fastq.gz.log</span>
+<span class="go">/Users/lcozzuto/work/79/f30f7041abf5baf7c496a0982906c1/B7_H3K4me1_s_chr19.fastq.gz.sam</span>
+<span class="go">/Users/lcozzuto/work/79/f30f7041abf5baf7c496a0982906c1/B7_H3K4me1_s_chr19.fastq.gz.log</span>
 
-<span class="go">Done! Open the following report in your browser --&gt; /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/output/ouptut_multiQC/multiqc_report.html</span>
+<span class="go">Done! Open the following report in your browser --&gt; /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/output/ouptut_multiQC/multiqc_report.html</span>
 
 <span class="go">Completed at: 24-Nov-2021 15:48:35</span>
 <span class="go">Duration    : 3m 25s</span>
@@ -188,7 +188,8 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <span class="go">drwxr-xr-x   6 lcozzuto  staff   192B Nov 24 16:11 ouptut_fastqc</span>
 </pre></div>
 </div>
-<p>Here you can see the <a class="reference external" href="https://lucacozzuto.github.io/elixir_NF/docs/multiqc_report.html">report</a> produced by multiQC</p>
+<p>Here you can see the <a class="reference external" href="https://nextflow-io.github.io/elixir-workshop-21/docs/multiqc_report.html">report</a> produced by <strong>multiQC</strong>. You can download the one you just generated by clicking with the righ button on that file.</p>
+<a class="reference internal image-reference" href="../_images/gitpod2.png"><img alt="../_images/gitpod2.png" src="../_images/gitpod2.png" style="width: 600px;" /></a>
 </section>
 <section id="work-folder-structure-and-process-isolation">
 <h2>Work folder structure and process isolation<a class="headerlink" href="#work-folder-structure-and-process-isolation" title="Permalink to this headline"></a></h2>
@@ -212,7 +213,7 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <span class="go">-rw-r--r--   1 lcozzuto  staff   6.9M Nov 24 16:11 chr19.fasta.gz.2.ebwt</span>
 <span class="go">-rw-r--r--   1 lcozzuto  staff    53B Nov 24 16:10 chr19.fasta.gz.3.ebwt</span>
 <span class="go">-rw-r--r--   1 lcozzuto  staff    14M Nov 24 16:10 chr19.fasta.gz.4.ebwt</span>
-<span class="go">lrwxr-xr-x   1 lcozzuto  staff    74B Nov 24 16:10 chr19.fasta.gz -&gt; /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+<span class="go">lrwxr-xr-x   1 lcozzuto  staff    74B Nov 24 16:10 chr19.fasta.gz -&gt; /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz</span>
 </pre></div>
 </div>
 <p>You can see the input files staged as links, the output files and some “hidden” files in which we have different information:</p>
@@ -229,7 +230,7 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <section id="resuming-and-changing-parameters">
 <h2>Resuming and changing parameters<a class="headerlink" href="#resuming-and-changing-parameters" title="Permalink to this headline"></a></h2>
 <p>We can copy a fastq files in another place and change the file name:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cp $PATH/.nextflow/assets/lucacozzuto/elixir_NF/data/*.gz .</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cp $PATH/.nextflow/assets/nextflow-io/elixir-workshop-21/data/*.gz .</span>
 <span class="go">mv B7_H3K4me1_s_chr19.fastq.gz test2.fastq.gz</span>
 <span class="go">mv B7_input_s_chr19.fastq.gz test1.fastq.gz</span>
 </pre></div>
@@ -240,18 +241,18 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <p>Nextflow parameters are indicated by one dash (-). Pipeline parameters by two dahses (--)</p>
 </div>
 <p>You can execute again the pipeline by using the Nextflow parameter <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and send it to background with <code class="docutils literal notranslate"><span class="pre">-bg</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -resume &gt; log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -resume &gt; log</span>
 
 <span class="go">      cat log</span>
 
 <span class="go">      N E X T F L O W  ~  version 21.10.3</span>
-<span class="go">      Launching `lucacozzuto/elixir_NF` [jolly_visvesvaraya] - revision: 040cd63a79 [main]</span>
+<span class="go">      Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [main]</span>
 <span class="go">      NOTE: Your local project version looks outdated - a different revision is available in the remote repository [cf2612db62]</span>
 
 <span class="go">      BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
 <span class="go">      =============================================</span>
 <span class="go">      reads                           : *.fastq.gz</span>
-<span class="go">      reference                       : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+<span class="go">      reference                       : /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz</span>
 <span class="go">      output                          : ./output</span>
 
 <span class="go">      [8b/cfcc4f] Submitted process &gt; fastqc (test1.fastq.gz)</span>
@@ -259,10 +260,10 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <span class="go">      [6e/1cc3be] Cached process &gt; BOWTIE:Index (chr19.fasta.gz)</span>
 <span class="go">      [97/2a6a72] Submitted process &gt; BOWTIE:Align (test2.fastq.gz)</span>
 <span class="go">      [0a/951748] Submitted process &gt; BOWTIE:Align (test1.fastq.gz)</span>
-<span class="go">      /Users/lcozzuto/ooo/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.log</span>
-<span class="go">      /Users/lcozzuto/ooo/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.sam</span>
-<span class="go">      /Users/lcozzuto/ooo/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.log</span>
-<span class="go">      /Users/lcozzuto/ooo/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.sam</span>
+<span class="go">      /Users/lcozzuto/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.log</span>
+<span class="go">      /Users/lcozzuto/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.sam</span>
+<span class="go">      /Users/lcozzuto/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.log</span>
+<span class="go">      /Users/lcozzuto/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.sam</span>
 <span class="go">      [f7/1b5746] Submitted process &gt; multiqc</span>
 
 <span class="go">      Done! Open the following report in your browser --&gt; ./output/ouptut_multiQC/multiqc_report.html</span>
@@ -286,19 +287,19 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <p>You can also store them indefinitely in your <strong>.bashrc</strong> or <strong>.bash_profile</strong> file.</p>
 </div>
 <p>We can then launch again the pipeline forcing this time without <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and check the live reporting on the tower website adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-tower</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -with-tower &gt; log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -with-tower &gt; log</span>
 
 <span class="go">tail -f log</span>
 
 <span class="go">N E X T F L O W  ~  version 21.10.3</span>
-<span class="go">Launching `lucacozzuto/elixir_NF` [evil_ekeblad] - revision: 040cd63a79 [main]</span>
+<span class="go">Launching `nextflow-io/elixir-workshop-21` [evil_ekeblad] - revision: 040cd63a79 [main]</span>
 <span class="go">NOTE: Your local project version looks outdated - a different revision is available in the remote repository [fb23636633]</span>
 <span class="go">Downloading plugin nf-tower@1.3.0</span>
 
 <span class="go">BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
 <span class="go">=============================================</span>
 <span class="go">reads                           : *.fastq.gz</span>
-<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz</span>
 <span class="go">output                          : ./output</span>
 
 <span class="go">Monitor the execution with Nextflow Tower using this url https://tower.nf/user/lucacozzuto/watch/54kIaLzfwIfiLx</span>
@@ -310,7 +311,7 @@ For this we need to tell Nextflow which is the right container engine. We can do
 </div>
 <p>We can check the appearance of a new pipeline and the content</p>
 <a class="reference internal image-reference" href="../_images/tower.gif"><img alt="../_images/tower.gif" src="../_images/tower.gif" style="width: 800px;" /></a>
-<p>When the pipeline is finished you also get a mail. Adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-report</span></code> will produce a final <a class="reference external" href="https://lucacozzuto.github.io/elixir_NF/docs/report.html">html report</a> with all the information that was in the tower.nf website.</p>
+<p>When the pipeline is finished you also get a mail. Adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-report</span></code> will produce a final <a class="reference external" href="https://nextflow-io.github.io/elixir-workshop-21/docs/report.html">html report</a> with all the information that was in the tower.nf website.</p>
 </section>
 </section>
 
