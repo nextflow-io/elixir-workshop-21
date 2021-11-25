@@ -43,7 +43,7 @@ We can launch the pipeline just by typing:
 
 .. code-block:: console
 
-  nextflow run nextflow-io/elixir-workshop-21 -r main
+  nextflow run nextflow-io/elixir-workshop-21 -r master
 
 In this way Nextflow will pull the pipeline from the GitHub repository, store it at ``$PATH/.nextflow/assets`` and launch it.
 
@@ -87,12 +87,12 @@ In this example we will use `Docker <https://www.docker.com/>`__: the default im
 
 .. code-block:: console
 
-  nextflow run nextflow-io/elixir-workshop-21 -r main -with-docker
+  nextflow run nextflow-io/elixir-workshop-21 -r master -with-docker
 
   N E X T F L O W  ~  version 21.04.3
   Pulling nextflow-io/elixir-workshop-21 ...
   downloaded from https://nextflow-io/elixir-workshop-21.git
-  Launching `nextflow-io/elixir-workshop-21` [determined_minsky] - revision: 711f9f806d [main]
+  Launching `nextflow-io/elixir-workshop-21` [determined_minsky] - revision: 711f9f806d [master]
 
   BIOCORE@CRG - N F TESTPIPE  ~  version 1.0
   =============================================
@@ -203,12 +203,12 @@ You can execute again the pipeline by using the Nextflow parameter ``-resume`` a
 
 .. code-block:: console
 
-  nextflow run nextflow-io/elixir-workshop-21 -with-docker -r main -bg --reads "*.fastq.gz" -resume > log
+  nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads "*.fastq.gz" -resume > log
   
   	cat log 
   
 	N E X T F L O W  ~  version 21.10.3
-	Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [main]
+	Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [master]
 	NOTE: Your local project version looks outdated - a different revision is available in the remote repository [cf2612db62]
 
 	BIOCORE@CRG - N F TESTPIPE  ~  version 1.0
@@ -263,12 +263,12 @@ We can then launch again the pipeline forcing this time without ``-resume`` and 
 
 .. code-block:: console
 
-	nextflow run nextflow-io/elixir-workshop-21 -with-docker -r main -bg --reads "*.fastq.gz" -with-tower > log
+	nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads "*.fastq.gz" -with-tower > log
 	
 	tail -f log
 	
 	N E X T F L O W  ~  version 21.10.3
-	Launching `nextflow-io/elixir-workshop-21` [evil_ekeblad] - revision: 040cd63a79 [main]
+	Launching `nextflow-io/elixir-workshop-21` [evil_ekeblad] - revision: 040cd63a79 [master]
 	NOTE: Your local project version looks outdated - a different revision is available in the remote repository [fb23636633]
 	Downloading plugin nf-tower@1.3.0
 
