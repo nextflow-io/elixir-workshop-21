@@ -170,7 +170,7 @@
 <span class="cm"> *  Read the reference file. If empty, complains                  </span>
 <span class="cm"> */</span>
 <span class="n">reference</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">reference</span><span class="o">)</span>
-<span class="k">if</span> <span class="o">(!</span><span class="n">reference</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span> <span class="n">error</span> <span class="s2">&quot;Cannot find any reference file matching: ${params.reference}&quot;</span> <span class="o">}</span>  
+<span class="k">if</span> <span class="o">(!</span><span class="n">reference</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span> <span class="n">error</span> <span class="s2">&quot;Cannot find any reference file matching: ${params.reference}&quot;</span><span class="o">;</span> <span class="k">return</span> <span class="o">}</span>  
 
 <span class="cm">/*</span>
 <span class="cm"> * MAIN workflow definition.</span>
