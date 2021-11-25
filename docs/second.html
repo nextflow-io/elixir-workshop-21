@@ -108,7 +108,7 @@ The default platform is <strong>GitHub</strong>, so we will use this repository 
 </tbody>
 </table>
 <p>We can launch the pipeline just by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r main</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r master</span>
 </pre></div>
 </div>
 <p>In this way Nextflow will pull the pipeline from the GitHub repository, store it at <code class="docutils literal notranslate"><span class="pre">$PATH/.nextflow/assets</span></code> and launch it.</p>
@@ -144,12 +144,12 @@ For this we need to tell Nextflow which is the right container engine. We can do
 </tbody>
 </table>
 <p>In this example we will use <a class="reference external" href="https://www.docker.com/">Docker</a>: the default image is stored in <a class="reference external" href="https://hub.docker.com/">DockerHub</a> and is retrieved on the fly.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r main -with-docker</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r master -with-docker</span>
 
 <span class="go">N E X T F L O W  ~  version 21.04.3</span>
 <span class="go">Pulling nextflow-io/elixir-workshop-21 ...</span>
 <span class="go">downloaded from https://nextflow-io/elixir-workshop-21.git</span>
-<span class="go">Launching `nextflow-io/elixir-workshop-21` [determined_minsky] - revision: 711f9f806d [main]</span>
+<span class="go">Launching `nextflow-io/elixir-workshop-21` [determined_minsky] - revision: 711f9f806d [master]</span>
 
 <span class="go">BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
 <span class="go">=============================================</span>
@@ -241,12 +241,12 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <p>Nextflow parameters are indicated by one dash (-). Pipeline parameters by two dahses (--)</p>
 </div>
 <p>You can execute again the pipeline by using the Nextflow parameter <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and send it to background with <code class="docutils literal notranslate"><span class="pre">-bg</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -resume &gt; log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads &quot;*.fastq.gz&quot; -resume &gt; log</span>
 
 <span class="go">      cat log</span>
 
 <span class="go">      N E X T F L O W  ~  version 21.10.3</span>
-<span class="go">      Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [main]</span>
+<span class="go">      Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [master]</span>
 <span class="go">      NOTE: Your local project version looks outdated - a different revision is available in the remote repository [cf2612db62]</span>
 
 <span class="go">      BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
@@ -288,12 +288,12 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <p>You can also store them indefinitely in your <strong>.bashrc</strong> or <strong>.bash_profile</strong> file.</p>
 </div>
 <p>We can then launch again the pipeline forcing this time without <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and check the live reporting on the tower website adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-tower</span></code>.</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -with-tower &gt; log</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads &quot;*.fastq.gz&quot; -with-tower &gt; log</span>
 
 <span class="go">tail -f log</span>
 
 <span class="go">N E X T F L O W  ~  version 21.10.3</span>
-<span class="go">Launching `nextflow-io/elixir-workshop-21` [evil_ekeblad] - revision: 040cd63a79 [main]</span>
+<span class="go">Launching `nextflow-io/elixir-workshop-21` [evil_ekeblad] - revision: 040cd63a79 [master]</span>
 <span class="go">NOTE: Your local project version looks outdated - a different revision is available in the remote repository [fb23636633]</span>
 <span class="go">Downloading plugin nf-tower@1.3.0</span>
 
