@@ -1,3 +1,5 @@
+<img align="right" href="https://biocore.crg.eu/" src="https://raw.githubusercontent.com/CRG-CNAG/BioCoreMiscOpen/master/logo/biocore-logo_small.png" />
+
 # Nextflow DSL2 
 
 Test pipeline for describing the potentialities of the Nextflow workflow orchestrator. 
