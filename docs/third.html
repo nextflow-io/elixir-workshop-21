@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Nextflow language &mdash; Nextflow  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Nextflow subworkflows and modules" href="fourth.html" />
+    <link rel="prev" title="Launching a pipeline" href="second.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Nextflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">Introduction to Nextflow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">Launching a pipeline</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">The Nextflow language</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-main-file">The main file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-params-config-file">The params.config file</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">The Nextflow subworkflows and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">The Nextflow config file</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nextflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>The Nextflow language</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="the-nextflow-language">
+<span id="third-page"></span><h1>The Nextflow language<a class="headerlink" href="#the-nextflow-language" title="Permalink to this headline"></a></h1>
+<section id="the-main-file">
+<h2>The main file<a class="headerlink" href="#the-main-file" title="Permalink to this headline"></a></h2>
+<p>We can use GitPod for looking and playing with the code. We need to log-in using github and open the project [… test this …].</p>
+<p>Then we go to workplace and load the <strong>main.nf</strong> file.</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="cp">#!/usr/bin/env nextflow</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Copyright (c) 2021, Centre for Genomic Regulation (CRG).</span>
+<span class="cm"> *</span>
+<span class="cm"> *   This file is part of &#39;CRG_course_NextFlow&#39;.</span>
+<span class="cm"> *</span>
+<span class="cm"> *   CRG_course_NextFlow is free software: you can redistribute it and/or modify</span>
+<span class="cm"> *   it under the terms of the GNU General Public License as published by</span>
+<span class="cm"> *   the Free Software Foundation, either version 3 of the License, or</span>
+<span class="cm"> *   (at your option) any later version.</span>
+<span class="cm"> *</span>
+<span class="cm"> *   CRG_course_NextFlow is distributed in the hope that it will be useful,</span>
+<span class="cm"> *   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="cm"> *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
+<span class="cm"> *   GNU General Public License for more details.</span>
+<span class="cm"> *</span>
+<span class="cm"> *   You should have received a copy of the GNU General Public License</span>
+<span class="cm"> *   along with CRG_course_NextFlow.  If not, see &lt;http://www.gnu.org/licenses/&gt;.</span>
+<span class="cm"> */</span>
+
+
+<span class="cm">/* </span>
+<span class="cm"> * This code enables the new Nextflow dsl (domain-specific language). </span>
+<span class="cm"> */</span>
+
+<span class="n">nextflow</span><span class="o">.</span><span class="na">enable</span><span class="o">.</span><span class="na">dsl</span><span class="o">=</span><span class="mi">2</span>
+
+
+<span class="cm">/* </span>
+<span class="cm"> * NextFlow test pipe, Those are comments</span>
+<span class="cm"> * @authors</span>
+<span class="cm"> * Luca Cozzuto &lt;lucacozzuto@gmail.com&gt;</span>
+<span class="cm"> * </span>
+<span class="cm"> */</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Input parameters: read pairs, reference and output</span>
+<span class="cm"> * The configuration is in nextflow.config file </span>
+<span class="cm"> * Params are stored in the params.config file </span>
+<span class="cm"> */</span>
+
+<span class="c1">// this prevents a warning of undefined parameter</span>
+<span class="n">params</span><span class="o">.</span><span class="na">help</span>             <span class="o">=</span> <span class="kc">false</span>
+
+<span class="c1">// this prints the input parameters</span>
+<span class="n">log</span><span class="o">.</span><span class="na">info</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">BIOCORE@CRG - N F TESTPIPE  </span>
+<span class="s2">=============================================</span>
+<span class="s2">reads                           : ${params.reads}</span>
+<span class="s2">reference                       : ${params.reference}</span>
+<span class="s2">output				: ${params.output}</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="c1">// this prints the help in case you use --help parameter in the command line and it stops the pipeline</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">help</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">log</span><span class="o">.</span><span class="na">info</span> <span class="s1">&#39;This is the Biocore\&#39;s Nextflow test pipeline&#39;</span>
+    <span class="n">log</span><span class="o">.</span><span class="na">info</span> <span class="s1">&#39;Please define reads, reference and output!\n&#39;</span>
+    <span class="n">log</span><span class="o">.</span><span class="na">info</span> <span class="s1">&#39;Enjoy!&#39;</span>
+    <span class="n">log</span><span class="o">.</span><span class="na">info</span> <span class="s1">&#39;\n&#39;</span>
+    <span class="n">exit</span> <span class="mi">1</span>
+<span class="o">}</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Defining the output folders.</span>
+<span class="cm"> */</span>
+<span class="n">fastqcOutputFolder</span>    <span class="o">=</span> <span class="s2">&quot;${params.output}/ouptut_fastqc&quot;</span>
+<span class="n">alnOutputFolder</span>       <span class="o">=</span> <span class="s2">&quot;${params.output}/ouptut_aln&quot;</span>
+<span class="n">multiqcOutputFolder</span>   <span class="o">=</span> <span class="s2">&quot;${params.output}/ouptut_multiQC&quot;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> * Defining the module / subworkflow path, and iclude the elements</span>
+<span class="cm"> */</span>
+<span class="n">subwork_folder</span> <span class="o">=</span> <span class="s2">&quot;${projectDir}/subworkflows/&quot;</span>
+<span class="n">include</span> <span class="o">{</span> <span class="n">fastqc</span> <span class="o">}</span> <span class="n">from</span> <span class="s2">&quot;${subwork_folder}/fastqc&quot;</span> <span class="n">addParams</span><span class="o">(</span><span class="nl">OUTPUT:</span> <span class="n">fastqcOutputFolder</span><span class="o">)</span>
+<span class="n">include</span> <span class="o">{</span> <span class="n">BOWTIE</span> <span class="o">}</span> <span class="n">from</span> <span class="s2">&quot;${subwork_folder}/bowtie&quot;</span> <span class="n">addParams</span><span class="o">(</span><span class="nl">OUTPUT:</span> <span class="n">alnOutputFolder</span><span class="o">,</span> <span class="nl">LABEL:</span><span class="s1">&#39;twocpus&#39;</span><span class="o">)</span>
+<span class="n">include</span> <span class="o">{</span> <span class="n">multiqc</span> <span class="o">}</span> <span class="n">from</span> <span class="s2">&quot;${subwork_folder}/multiqc&quot;</span> <span class="n">addParams</span><span class="o">(</span><span class="nl">OUTPUT:</span> <span class="n">multiqcOutputFolder</span><span class="o">)</span>
+
+
+<span class="cm">/*</span>
+<span class="cm"> * Read the files indicated by the wildcard                   </span>
+<span class="cm"> */</span>
+<span class="n">Channel</span>
+    <span class="o">.</span><span class="na">fromPath</span><span class="o">(</span> <span class="n">params</span><span class="o">.</span><span class="na">reads</span> <span class="o">)</span>  								                           
+    <span class="o">.</span><span class="na">ifEmpty</span> <span class="o">{</span> <span class="n">error</span> <span class="s2">&quot;Cannot find any reads matching: ${params.reads}&quot;</span> <span class="o">}</span>                                  <span class="c1">// if empty, complains</span>
+    <span class="o">.</span><span class="na">set</span> <span class="o">{</span><span class="n">reads</span><span class="o">}</span> 											  <span class="c1">// make the channel &quot;reads&quot;</span>
+
+<span class="cm">/*</span>
+<span class="cm"> *  Read the reference file. If empty, complains                  </span>
+<span class="cm"> */</span>
+<span class="n">reference</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span><span class="n">params</span><span class="o">.</span><span class="na">reference</span><span class="o">)</span>
+<span class="k">if</span> <span class="o">(!</span><span class="n">reference</span><span class="o">.</span><span class="na">exists</span><span class="o">())</span> <span class="o">{</span> <span class="n">error</span> <span class="s2">&quot;Cannot find any reference file matching: ${params.reference}&quot;</span> <span class="o">}</span>  
+
+<span class="cm">/*</span>
+<span class="cm"> * MAIN workflow definition.</span>
+<span class="cm"> * 1) Execute fastqc on input reads in parallel</span>
+<span class="cm"> * 2) Execute BOWTIE sub-workflow with both indexing and alignment </span>
+<span class="cm"> * 3) Gather the results from both fastqc module and bowtie sub-workflow and execute the multiQC module</span>
+<span class="cm"> */</span>
+<span class="n">workflow</span> <span class="o">{</span>
+	<span class="n">fastqc_out</span> <span class="o">=</span> <span class="n">fastqc</span><span class="o">(</span><span class="n">reads</span><span class="o">)</span>
+	<span class="n">map_res</span> <span class="o">=</span> <span class="n">BOWTIE</span><span class="o">(</span><span class="n">reference</span><span class="o">,</span> <span class="n">reads</span><span class="o">)</span>
+	<span class="n">multiqc</span><span class="o">(</span><span class="n">fastqc_out</span><span class="o">.</span><span class="na">mix</span><span class="o">(</span><span class="n">map_res</span><span class="o">.</span><span class="na">logs</span><span class="o">).</span><span class="na">collect</span><span class="o">())</span>
+	<span class="n">map_res</span><span class="o">.</span><span class="na">sam</span><span class="o">.</span><span class="na">view</span><span class="o">()</span>                                 <span class="c1">// view the output sam files</span>
+	<span class="n">map_res</span><span class="o">.</span><span class="na">logs</span><span class="o">.</span><span class="na">view</span><span class="o">()</span>                                <span class="c1">// view the output log files</span>
+<span class="o">}</span>
+
+
+<span class="cm">/*</span>
+<span class="cm"> *  When complete print a message                  </span>
+<span class="cm"> */</span>
+<span class="n">workflow</span><span class="o">.</span><span class="na">onComplete</span> <span class="o">{</span> 
+	<span class="n">println</span> <span class="o">(</span> <span class="n">workflow</span><span class="o">.</span><span class="na">success</span> <span class="o">?</span> <span class="s2">&quot;\nDone! Open the following report in your browser --&gt; ${multiqcOutputFolder}/multiqc_report.html\n&quot;</span> <span class="o">:</span> <span class="s2">&quot;Oops .. something went wrong&quot;</span> <span class="o">)</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="the-params-config-file">
+<h2>The params.config file<a class="headerlink" href="#the-params-config-file" title="Permalink to this headline"></a></h2>
+<p>This file contains the definition of the pipeline parameters with some default values. They can be overridden by using <strong>two hyphens</strong> (as <code class="docutils literal notranslate"><span class="pre">--reads</span></code> or <code class="docutils literal notranslate"><span class="pre">--reference</span></code> etc).</p>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">params</span> <span class="o">{</span>
+	<span class="n">reads</span>		<span class="o">=</span> <span class="s2">&quot;$projectDir/data/*.fastq.gz&quot;</span>
+	<span class="n">reference</span>       <span class="o">=</span> <span class="s2">&quot;$projectDir/data/chr19.fasta.gz&quot;</span>
+        <span class="n">output</span>          <span class="o">=</span> <span class="s2">&quot;./output&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="second.html" class="btn btn-neutral float-left" title="Launching a pipeline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fourth.html" class="btn btn-neutral float-right" title="The Nextflow subworkflows and modules" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, CRG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

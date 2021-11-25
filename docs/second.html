@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Launching a pipeline &mdash; Nextflow  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Nextflow language" href="third.html" />
+    <link rel="prev" title="Introduction to Nextflow" href="first.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Nextflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the course</a></li>
+<li class="toctree-l1"><a class="reference internal" href="first.html">Introduction to Nextflow</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Launching a pipeline</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sharing-nextflow-code">Sharing Nextflow code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#linux-containers">Linux containers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#work-folder-structure-and-process-isolation">Work folder structure and process isolation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#resuming-and-changing-parameters">Resuming and changing parameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-and-monitoring">Reporting and monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">The Nextflow language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">The Nextflow subworkflows and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">The Nextflow config file</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nextflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Launching a pipeline</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="launching-a-pipeline">
+<span id="second-page"></span><h1>Launching a pipeline<a class="headerlink" href="#launching-a-pipeline" title="Permalink to this headline"></a></h1>
+<p>You can launch a pipeline by simply executing this code</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run PIPELINENAME.nf</span>
+</pre></div>
+</div>
+<p>But is really convenient to store your code in one of the sharing platform that are supported.</p>
+<section id="sharing-nextflow-code">
+<h2>Sharing Nextflow code<a class="headerlink" href="#sharing-nextflow-code" title="Permalink to this headline"></a></h2>
+<p>Nextflow supports a number of code sharing platforms: <strong>BitBucket</strong>, <strong>GitHub</strong>, and <strong>GitLab</strong>.
+This feature allows running pipelines by just pointing to an online repository without caring about downloading, installing etc.
+The default platform is <strong>GitHub</strong>, so we will use this repository as an example.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>GitHub</p></th>
+<th class="head"><p>BitBucket</p></th>
+<th class="head"><p>GitLab</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../_images/GitHub-Logo.png"><img alt="github" src="../_images/GitHub-Logo.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/bitbucket-logo.png"><img alt="bitbucket" src="../_images/bitbucket-logo.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/gitlab-logo.jpeg"><img alt="gitlab" src="../_images/gitlab-logo.jpeg" style="width: 200px;" /></a></p></td>
+</tr>
+</tbody>
+</table>
+<p>We can launch the pipeline just by typing:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -r main</span>
+</pre></div>
+</div>
+<p>In this way Nextflow will pull the pipeline from the GitHub repository, store it at <code class="docutils literal notranslate"><span class="pre">$PATH/.nextflow/assets</span></code> and launch it.</p>
+</section>
+<section id="linux-containers">
+<h2>Linux containers<a class="headerlink" href="#linux-containers" title="Permalink to this headline"></a></h2>
+<p>This pipeline needs tools that are stored within linux containers. In particular we will use images for <a class="reference external" href="http://bowtie-bio.sourceforge.net/index.shtml">Bowtie</a>, <a class="reference external" href="https://www.bioinformatics.babraham.ac.uk/projects/fastqc/">FastQC</a> and <a class="reference external" href="https://multiqc.info/">multiQC</a> that are retrieved from <a class="reference external" href="https://biocontainers.pro/">Biocontainers</a>.
+For this we need to tell Nextflow which is the right container engine. We can do this by using the Nextflow parameter <code class="docutils literal notranslate"><span class="pre">-with-docker</span></code>.</p>
+<p>Nextflow supports many more container engines like Singularity, Shifter, Podman and Charliecloud.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Docker</p></th>
+<th class="head"><p>Singularity</p></th>
+<th class="head"><p>Shifter</p></th>
+<th class="head"><p>Podman</p></th>
+<th class="head"><p>Charliecloud</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference internal" href="../_images/docker-logo.png"><img alt="docker" src="../_images/docker-logo.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/singularity_logo.jpeg"><img alt="singularity" src="../_images/singularity_logo.jpeg" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/shifter.png"><img alt="shifter" src="../_images/shifter.png" style="width: 200px;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/podman-logo.png"><img alt="podman" src="../_images/podman-logo.png" style="width: 200px;" /></a></p></td>
+<td><p><img alt="charlie" src="../_images/charlie.png" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>In this example we will use <a class="reference external" href="https://www.docker.com/">Docker</a>: the default image is stored in <a class="reference external" href="https://hub.docker.com/">DockerHub</a> and is retrieved on the fly.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -r main -with-docker</span>
+
+<span class="go">N E X T F L O W  ~  version 21.04.3</span>
+<span class="go">Pulling lucacozzuto/elixir_NF ...</span>
+<span class="go">downloaded from https://github.com/lucacozzuto/elixir_NF.git</span>
+<span class="go">Launching `lucacozzuto/elixir_NF` [determined_minsky] - revision: 711f9f806d [main]</span>
+
+<span class="go">BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
+<span class="go">=============================================</span>
+<span class="go">reads                           : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/*.fastq.gz</span>
+<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+<span class="go">output                          : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/output</span>
+
+<span class="go">executor &gt;  local (3)</span>
+<span class="go">[2f/6cd1ca] process &gt; fastqc (B7_H3K4me1_s_chr19.fastq.gz) [100%] 2 of 2 ✔</span>
+<span class="go">[a2/305aae] process &gt; BOWTIE:Index (chr19.fasta.gz)        [  0%] 0 of 1</span>
+<span class="go">[79/f30f70] process &gt; BOWTIE:Align (B7_H3K4me1_s_chr19.fastq.gz) [100%] 2 of 2 ✔</span>
+<span class="go">[50/088302] process &gt; multiqc                                    [100%] 1 of 1 ✔</span>
+<span class="go">/Users/lcozzuto/ooo/work/27/f1cc39c1e01c9ee55684b347c492f5/B7_input_s_chr19.fastq.gz.sam</span>
+<span class="go">/Users/lcozzuto/ooo/work/27/f1cc39c1e01c9ee55684b347c492f5/B7_input_s_chr19.fastq.gz.log</span>
+<span class="go">/Users/lcozzuto/ooo/work/79/f30f7041abf5baf7c496a0982906c1/B7_H3K4me1_s_chr19.fastq.gz.sam</span>
+<span class="go">/Users/lcozzuto/ooo/work/79/f30f7041abf5baf7c496a0982906c1/B7_H3K4me1_s_chr19.fastq.gz.log</span>
+
+<span class="go">Done! Open the following report in your browser --&gt; /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/output/ouptut_multiQC/multiqc_report.html</span>
+
+<span class="go">Completed at: 24-Nov-2021 15:48:35</span>
+<span class="go">Duration    : 3m 25s</span>
+<span class="go">CPU hours   : 0.1</span>
+<span class="go">Succeeded   : 6</span>
+</pre></div>
+</div>
+<p>This pipeline can be launched also with Singularity just using the Nextflow parameter <code class="docutils literal notranslate"><span class="pre">-with-singularity</span></code>. Nextflow will retrieve and convert the image(s) for you. The image(s) will be then stored so that next time you don’t need to download anything again.</p>
+<p>We can inspect the output in the new <code class="docutils literal notranslate"><span class="pre">output</span></code> folder generated.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">ls -alht output</span>
+
+<span class="go">ls -alht</span>
+<span class="go">total 0</span>
+<span class="go">drwxr-xr-x  17 lcozzuto  staff   544B Nov 24 16:18 ..</span>
+<span class="go">drwxr-xr-x   3 lcozzuto  staff    96B Nov 24 16:13 ouptut_multiQC</span>
+<span class="go">drwxr-xr-x   5 lcozzuto  staff   160B Nov 24 16:13 .</span>
+<span class="go">drwxr-xr-x   4 lcozzuto  staff   128B Nov 24 16:13 ouptut_aln</span>
+<span class="go">drwxr-xr-x   6 lcozzuto  staff   192B Nov 24 16:11 ouptut_fastqc</span>
+</pre></div>
+</div>
+<p>Here you can see the <a class="reference external" href="https://lucacozzuto.github.io/elixir_NF/docs/multiqc_report.html">report</a> produced by multiQC</p>
+</section>
+<section id="work-folder-structure-and-process-isolation">
+<h2>Work folder structure and process isolation<a class="headerlink" href="#work-folder-structure-and-process-isolation" title="Permalink to this headline"></a></h2>
+<p>Once executed, we can see that a folder named work is generated. Nextflow stores in this folder the intermediate files generated by each processes. In case you resume a process that folder is “reused” as cache.</p>
+<p>At the start of each row, there is an <strong>alphanumeric code</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">[a2/305aae] process &gt; BOWTIE:Index (chr19.fasta.gz)        [  0%] 0 of 1</span>
+</pre></div>
+</div>
+<p>This code indicates <strong>the path</strong> in which the process is “isolated” and where the corresponding temporary files are kept in the <strong>work</strong> directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nextflow will randomly generate temporary folders so they will be named differently in your execution.</p>
+</div>
+<p>Let’s have a look inside that folder:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd work/a2/305aaee297250b0c7a455cab35707c/</span>
+<span class="go">ls -alht</span>
+
+<span class="go">-rw-r--r--   1 lcozzuto  staff    20M Nov 24 16:12 chr19.fasta.gz.rev.1.ebwt</span>
+<span class="go">-rw-r--r--   1 lcozzuto  staff   6.9M Nov 24 16:12 chr19.fasta.gz.rev.2.ebwt</span>
+<span class="go">-rw-r--r--   1 lcozzuto  staff    20M Nov 24 16:11 chr19.fasta.gz.1.ebwt</span>
+<span class="go">-rw-r--r--   1 lcozzuto  staff   6.9M Nov 24 16:11 chr19.fasta.gz.2.ebwt</span>
+<span class="go">-rw-r--r--   1 lcozzuto  staff    53B Nov 24 16:10 chr19.fasta.gz.3.ebwt</span>
+<span class="go">-rw-r--r--   1 lcozzuto  staff    14M Nov 24 16:10 chr19.fasta.gz.4.ebwt</span>
+<span class="go">lrwxr-xr-x   1 lcozzuto  staff    74B Nov 24 16:10 chr19.fasta.gz -&gt; /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+</pre></div>
+</div>
+<p>You can see the input files staged as links, the output files and some “hidden” files in which we have different information:</p>
+<ul class="simple">
+<li><p><strong>.exitcode</strong>, contains 0 if everything is ok, another value if there was a problem.</p></li>
+<li><p><strong>.command.log</strong>, contains the log of the command execution. It is often identical to <cite>.command.out</cite></p></li>
+<li><p><strong>.command.out</strong>, contains the standard output of the command execution</p></li>
+<li><p><strong>.command.err</strong>, contains the standard error of the command execution</p></li>
+<li><p><strong>.command.begin</strong>, contains what has to be executed before <cite>.command.sh</cite></p></li>
+<li><p><strong>.command.sh</strong>, contains the block of code indicated in the process</p></li>
+<li><p><strong>.command.run</strong>, contains the code made by nextflow for the execution of <cite>.command.sh</cite>, and contains environmental variables, eventual invocations of linux containers etc.</p></li>
+</ul>
+</section>
+<section id="resuming-and-changing-parameters">
+<h2>Resuming and changing parameters<a class="headerlink" href="#resuming-and-changing-parameters" title="Permalink to this headline"></a></h2>
+<p>We can copy a fastq files in another place and change the file name:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cp $PATH/.nextflow/assets/lucacozzuto/elixir_NF/data/*.gz .</span>
+<span class="go">mv B7_H3K4me1_s_chr19.fastq.gz test2.fastq.gz</span>
+<span class="go">mv B7_input_s_chr19.fastq.gz test1.fastq.gz</span>
+</pre></div>
+</div>
+<p>Then we can execute again the pipeline feeding the new input files by using the pipeline parameter <code class="docutils literal notranslate"><span class="pre">--reads</span> <span class="pre">&quot;&quot;</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nextflow parameters are indicated by one dash (-). Pipeline parameters by two dahses (--)</p>
+</div>
+<p>You can execute again the pipeline by using the Nextflow parameter <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and send it to background with <code class="docutils literal notranslate"><span class="pre">-bg</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -resume &gt; log</span>
+
+<span class="go">      cat log</span>
+
+<span class="go">      N E X T F L O W  ~  version 21.10.3</span>
+<span class="go">      Launching `lucacozzuto/elixir_NF` [jolly_visvesvaraya] - revision: 040cd63a79 [main]</span>
+<span class="go">      NOTE: Your local project version looks outdated - a different revision is available in the remote repository [cf2612db62]</span>
+
+<span class="go">      BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
+<span class="go">      =============================================</span>
+<span class="go">      reads                           : *.fastq.gz</span>
+<span class="go">      reference                       : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+<span class="go">      output                          : ./output</span>
+
+<span class="go">      [8b/cfcc4f] Submitted process &gt; fastqc (test1.fastq.gz)</span>
+<span class="go">      [5b/71ae88] Submitted process &gt; fastqc (test2.fastq.gz)</span>
+<span class="go">      [6e/1cc3be] Cached process &gt; BOWTIE:Index (chr19.fasta.gz)</span>
+<span class="go">      [97/2a6a72] Submitted process &gt; BOWTIE:Align (test2.fastq.gz)</span>
+<span class="go">      [0a/951748] Submitted process &gt; BOWTIE:Align (test1.fastq.gz)</span>
+<span class="go">      /Users/lcozzuto/ooo/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.log</span>
+<span class="go">      /Users/lcozzuto/ooo/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.sam</span>
+<span class="go">      /Users/lcozzuto/ooo/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.log</span>
+<span class="go">      /Users/lcozzuto/ooo/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.sam</span>
+<span class="go">      [f7/1b5746] Submitted process &gt; multiqc</span>
+
+<span class="go">      Done! Open the following report in your browser --&gt; ./output/ouptut_multiQC/multiqc_report.html</span>
+</pre></div>
+</div>
+<p>You can see that the <strong>indexing</strong> of the genome is cached while the processes that are influenced by the new files are triggered.</p>
+</section>
+<section id="reporting-and-monitoring">
+<h2>Reporting and monitoring<a class="headerlink" href="#reporting-and-monitoring" title="Permalink to this headline"></a></h2>
+<p>Before going to the code we can have a look to two important features of Nextflow: the ability to produce a comprehensive report and the live monitoring offered by <strong>tower.nf</strong> web application.</p>
+<p>We can go to the <a class="reference external" href="https://tower.nf/login">tower.nf</a> website</p>
+<a class="reference internal image-reference" href="../_images/tower.png"><img alt="../_images/tower.png" src="../_images/tower.png" style="width: 800px;" /></a>
+<p>and click on the <strong>GitHub</strong> authentication.</p>
+<a class="reference internal image-reference" href="../_images/tower.png"><img alt="../_images/tower.png" src="../_images/tower.png" style="width: 800px;" /></a>
+<p>You can generate your token at <a class="reference external" href="https://tower.nf/tokens">https://tower.nf/tokens</a> exporting those environmental variables:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export TOWER_ACCESS_TOKEN=*******YOUR***TOKEN*****HERE*******</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can also store them indefinitely in your <strong>.bashrc</strong> or <strong>.bash_profile</strong> file.</p>
+</div>
+<p>We can then launch again the pipeline forcing this time without <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and check the live reporting on the tower website adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-tower</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run lucacozzuto/elixir_NF -with-docker -r main -bg --reads &quot;*.fastq.gz&quot; -with-tower &gt; log</span>
+
+<span class="go">tail -f log</span>
+
+<span class="go">N E X T F L O W  ~  version 21.10.3</span>
+<span class="go">Launching `lucacozzuto/elixir_NF` [evil_ekeblad] - revision: 040cd63a79 [main]</span>
+<span class="go">NOTE: Your local project version looks outdated - a different revision is available in the remote repository [fb23636633]</span>
+<span class="go">Downloading plugin nf-tower@1.3.0</span>
+
+<span class="go">BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
+<span class="go">=============================================</span>
+<span class="go">reads                           : *.fastq.gz</span>
+<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/lucacozzuto/elixir_NF/data/chr19.fasta.gz</span>
+<span class="go">output                          : ./output</span>
+
+<span class="go">Monitor the execution with Nextflow Tower using this url https://tower.nf/user/lucacozzuto/watch/54kIaLzfwIfiLx</span>
+<span class="go">[23/b06dda] Submitted process &gt; fastqc (test1.fastq.gz)</span>
+<span class="go">[ee/82bce0] Submitted process &gt; fastqc (test2.fastq.gz)</span>
+<span class="go">[27/82af32] Submitted process &gt; BOWTIE:Index (chr19.fasta.gz)</span>
+<span class="go">[...]</span>
+</pre></div>
+</div>
+<p>We can check the appearance of a new pipeline and the content</p>
+<a class="reference internal image-reference" href="../_images/tower.gif"><img alt="../_images/tower.gif" src="../_images/tower.gif" style="width: 800px;" /></a>
+<p>When the pipeline is finished you also get a mail. Adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-report</span></code> will produce a final <a class="reference external" href="https://lucacozzuto.github.io/elixir_NF/docs/report.html">html report</a> with all the information that was in the tower.nf website.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="first.html" class="btn btn-neutral float-left" title="Introduction to Nextflow" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="third.html" class="btn btn-neutral float-right" title="The Nextflow language" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, CRG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction to Nextflow &mdash; Nextflow  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Launching a pipeline" href="second.html" />
+    <link rel="prev" title="About the course" href="about.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Nextflow
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the course</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction to Nextflow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-nextflow">What is Nextflow?</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#what-is-nextflow-for">What is Nextflow for?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#main-advantages">Main advantages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fast-prototyping">Fast prototyping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reproducibility">Reproducibility</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#portability">Portability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scalability">Scalability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#resumable-thanks-to-continuous-checkpoints">Resumable, thanks to continuous checkpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#workflow-structure">Workflow structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="second.html">Launching a pipeline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="third.html">The Nextflow language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fourth.html">The Nextflow subworkflows and modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fifth.html">The Nextflow config file</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nextflow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Introduction to Nextflow</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="introduction-to-nextflow">
+<span id="first-page"></span><h1>Introduction to Nextflow<a class="headerlink" href="#introduction-to-nextflow" title="Permalink to this headline"></a></h1>
+<p>Enabling scalable and reproducible scientific workflows using software containers.  <a class="reference external" href="https://www.nextflow.io">www.nextflow.io</a>.</p>
+<section id="what-is-nextflow">
+<h2>What is Nextflow?<a class="headerlink" href="#what-is-nextflow" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://www.nextflow.io">Nextflow</a> is a domain specific language (DSL) for workflow orchestration that stems from <a class="reference external" href="https://groovy-lang.org/">Groovy</a>. It enables scalable and reproducible workflows using software containers.
+It was developed at the <a class="reference external" href="www.crg.eu">CRG</a> in the Lab of Cedric Notredame by <a class="reference external" href="https://github.com/pditommaso">Paolo Di Tommaso</a>.
+The Nextflow documentation is <a class="reference external" href="https://www.nextflow.io/docs/latest/">available here</a> and you can ask help to the community using their <a class="reference external" href="https://gitter.im/nextflow-io/nextflow">gitter channel</a></p>
+<a class="reference internal image-reference" href="../_images/nextf_groovy.png"><img alt="../_images/nextf_groovy.png" src="../_images/nextf_groovy.png" style="width: 600px;" /></a>
+<p>In 2020, Nextflow has been upgraded from DSL1 version to DSL2. In this course we will use exclusively DSL2.</p>
+<section id="what-is-nextflow-for">
+<h3>What is Nextflow for?<a class="headerlink" href="#what-is-nextflow-for" title="Permalink to this headline"></a></h3>
+<p>It is for making pipelines without caring about parallelization, dependencies, intermediate file names, data structures, handling exceptions, resuming executions, etc.</p>
+<p>It was published in <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/28398311/">Nature Biotechnology in 2017</a>.</p>
+<a class="reference internal image-reference" href="../_images/NF_pub.png"><img alt="../_images/NF_pub.png" src="../_images/NF_pub.png" style="width: 600px;" /></a>
+<p>There is a growing number of <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/?term=nextflow&amp;timeline=expanded&amp;sort=pubdate&amp;sort_order=asc">PubMed</a> publications citing Nextflow.</p>
+<a class="reference internal image-reference" href="../_images/NF_mentioning.png"><img alt="../_images/NF_mentioning.png" src="../_images/NF_mentioning.png" style="width: 600px;" /></a>
+<p>Here you have a curated list of <a class="reference external" href="https://github.com/nextflow-io/awesome-nextflow">Nextflow pipelines</a> and a collection of pipelines written collaboratively in the framework of the <a class="reference external" href="https://nf-co.re/pipelines">NF-core</a> project.</p>
+</section>
+</section>
+<section id="main-advantages">
+<h2>Main advantages<a class="headerlink" href="#main-advantages" title="Permalink to this headline"></a></h2>
+<section id="fast-prototyping">
+<h3>Fast prototyping<a class="headerlink" href="#fast-prototyping" title="Permalink to this headline"></a></h3>
+<p>You can quickly write a small pipeline that can be <strong>expanded incrementally</strong>.
+<strong>Each task is independent</strong> and can be easily added to other. You can reuse scripts without re-writing or adapting them.</p>
+</section>
+<section id="reproducibility">
+<h3>Reproducibility<a class="headerlink" href="#reproducibility" title="Permalink to this headline"></a></h3>
+<p>Nextflow supports <strong>Docker</strong> and <strong>Singularity</strong> containers technology. Their use will make the pipelines reproducible in any Unix environment. Nextflow is integrated with <strong>GitHub code sharing platform</strong>, so you can call directly a specific version of a pipeline from a repository, download and use it on-the-fly.</p>
+</section>
+<section id="portability">
+<h3>Portability<a class="headerlink" href="#portability" title="Permalink to this headline"></a></h3>
+<p>Nextflow can be executed on <strong>multiple platforms</strong> without modifiying the code. It supports several schedulers such as <strong>SGE, LSF, SLURM, PBS, HTCondor</strong> and cloud platforms like <strong>Kubernetes, Amazon AWS, Google Cloud</strong>.</p>
+<a class="reference internal image-reference" href="../_images/executors.png"><img alt="../_images/executors.png" src="../_images/executors.png" style="width: 600px;" /></a>
+</section>
+<section id="scalability">
+<h3>Scalability<a class="headerlink" href="#scalability" title="Permalink to this headline"></a></h3>
+<p>Nextflow is based on the <strong>dataflow programming model</strong> which simplifies writing complex pipelines.
+The tool takes care of <strong>parallelizing the processes</strong> without additionally written code.
+The resulting applications are inherently parallel and can scale-up or scale-out transparently; there is no need to adapt them to a specific platform architecture.</p>
+</section>
+<section id="resumable-thanks-to-continuous-checkpoints">
+<h3>Resumable, thanks to continuous checkpoints<a class="headerlink" href="#resumable-thanks-to-continuous-checkpoints" title="Permalink to this headline"></a></h3>
+<p>All the intermediate results produced during the pipeline execution are automatically tracked.
+For each process <strong>a temporary folder is created and is cached (or not) once resuming an execution</strong>.</p>
+</section>
+</section>
+<section id="workflow-structure">
+<h2>Workflow structure<a class="headerlink" href="#workflow-structure" title="Permalink to this headline"></a></h2>
+<p>The workflows can be represented as graphs where the nodes are the <strong>processes</strong> and the edges are the <strong>channels</strong>.
+The <strong>processes</strong> are blocks of code that can be executed - such as scripts or programs - while the <strong>channels</strong> are asynchronous queues able to <strong>connect processes among them via input / output</strong>.</p>
+<a class="reference internal image-reference" href="../_images/wf_example.png"><img alt="../_images/wf_example.png" src="../_images/wf_example.png" style="width: 600px;" /></a>
+<p>Processes are independent from each another and can be run in parallel, depending on the number of elements in a channel.
+In the previous example, processes <strong>A</strong>, <strong>B</strong> and <strong>C</strong> can be run in parallel and only when they <strong>ALL</strong> end the process <strong>D</strong> is triggered.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need at least the Java version 8 for the Nextflow installation.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can check the version fo java by typing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">java</span> <span class="o">-</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<p>Then we can install Nextflow with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="o">-</span><span class="n">s</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">get</span><span class="o">.</span><span class="n">nextflow</span><span class="o">.</span><span class="n">io</span> <span class="o">|</span> <span class="n">bash</span>
+</pre></div>
+</div>
+<p>This will create the <code class="docutils literal notranslate"><span class="pre">nextflow</span></code> executable that can be moved, for example, to <code class="docutils literal notranslate"><span class="pre">/usr/local/bin</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="about.html" class="btn btn-neutral float-left" title="About the course" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="second.html" class="btn btn-neutral float-right" title="Launching a pipeline" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, CRG.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
