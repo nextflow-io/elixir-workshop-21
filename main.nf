@@ -90,7 +90,7 @@ Channel
  *  Read the reference file. If empty, complains                  
  */
 reference = file(params.reference)
-if (!reference.exists()) { error "Cannot find any reference file matching: ${params.reference}" }  
+if (!reference.exists()) { error "Cannot find any reference file matching: ${params.reference}"; return }  
 
 /*
  * MAIN workflow definition.
