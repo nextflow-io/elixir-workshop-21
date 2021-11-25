@@ -99,10 +99,18 @@ Installation
 
     java -version
 
-Then we can install Nextflow with::
+Then we can install Nextflow with:
+
+.. code-block:: console
 
   curl -s https://get.nextflow.io | bash
 
 This will create the ``nextflow`` executable that can be moved, for example, to ``/usr/local/bin``.
+
+.. code-block:: console
+
+  sudo mv nextflow /usr/local/bin
+  
+
 
 
