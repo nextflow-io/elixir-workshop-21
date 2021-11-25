@@ -88,8 +88,8 @@ Channel
 /*
  *  Read the reference file. If empty, complains                  
  */
-reference = file(params.reference)
-if (!reference.exists()) { error "Cannot find any reference file matching: ${params.reference}"; exit }  
+Channel.fromPath( params.reference, checkIfExists: true )  	// if empty, complains						                           
+    .set {reference} 						// make the channel "reads"
 
 /*
  * MAIN workflow definition.
