@@ -244,10 +244,13 @@ We can go to the `tower.nf <https://tower.nf/login>`__ website
 
 and click on the **GitHub** authentication.
 
-.. image:: images/tower.png
+.. image:: images/tower_eli1.png
   :width: 800
 
 You can generate your token at `https://tower.nf/tokens <https://tower.nf/tokens>`__ exporting those environmental variables:
+
+.. image:: images/tower2.png
+  :width: 800
 
 .. code-block:: console
 
