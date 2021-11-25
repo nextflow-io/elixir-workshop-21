@@ -19,6 +19,11 @@ Once complete follow the tutorial at the link below:
 
 https://nextflow-io.github.io/elixir-workshop-21/docs/
 
+## Installing Nextflow
+
+```
+  curl -s https://get.nextflow.io | bash
+```
 
 ## Supporting organisations 
 
