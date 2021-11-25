@@ -83,7 +83,7 @@ include { multiqc } from "${subwork_folder}/multiqc" addParams(OUTPUT: multiqcOu
  */
 Channel
     .fromPath( params.reads )  								                           
-    .ifEmpty { error "Cannot find any reads matching: ${params.reads}" }                                  // if empty, complains
+    .ifEmpty { error "Cannot find any reads matching: ${params.reads}"; return }                                  // if empty, complains
     .set {reads} 											  // make the channel "reads"
 
 /*
