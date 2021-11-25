@@ -3,14 +3,15 @@
 /*
  * Copyright (c) 2021, Centre for Genomic Regulation (CRG).
  *
- *   This file is part of 'CRG_course_NextFlow'.
+ *   This file is part of 'nextflow-io/elixir-workshop-21'
+'.
  *
- *   CRG_course_NextFlow is free software: you can redistribute it and/or modify
+ *   elixir-workshop-21 is free software: you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
  *   the Free Software Foundation, either version 3 of the License, or
  *   (at your option) any later version.
  *
- *   CRG_course_NextFlow is distributed in the hope that it will be useful,
+ *   elixir-workshop-21 is distributed in the hope that it will be useful,
  *   but WITHOUT ANY WARRANTY; without even the implied warranty of
  *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  *   GNU General Public License for more details.
@@ -69,7 +70,7 @@ alnOutputFolder       = "${params.output}/ouptut_aln"
 multiqcOutputFolder   = "${params.output}/ouptut_multiQC"
 
 /*
- * Defining the module / subworkflow path, and iclude the elements
+ * Defining the module / subworkflow path, and include the elements
  */
 subwork_folder = "${projectDir}/subworkflows/"
 include { fastqc } from "${subwork_folder}/fastqc" addParams(OUTPUT: fastqcOutputFolder)
