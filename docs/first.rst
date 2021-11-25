@@ -78,7 +78,7 @@ Workflow structure
 ==================
 
 The workflows can be represented as graphs where the nodes are the **processes** and the edges are the **channels**.
-The **processes** are blocks of code that can be executed - such as scripts or programs - while the **channels** are asynchronous queues able to **connect processes among them via input / output**.
+The **processes** are blocks of code that can be executed - such as scripts or programs - while the **channels** are asynchronous queues able to **connect processes among them via input / output**. Some methods, called **operators** are provided for reshaping and combining the channels. 
 
 
 .. image:: images/wf_example.png
@@ -99,7 +99,14 @@ Installation
 
     java -version
 
-Then we can install Nextflow with:
+We can open our repository in GitPod by clicking this `link <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__.
+
+On the left we have the different files. We can then open a terminal as indicated in the picture:
+
+.. image:: images/gitpod1.png
+  :width: 800
+
+And we can install Nextflow using this command:
 
 .. code-block:: console
 
