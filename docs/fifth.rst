@@ -24,7 +24,7 @@ You can activate using this command line:
 
 .. code-block:: console
 
-  nextflow run lucacozzuto/elixir_NF -r main -profile hpc_sge -with-docker
+  nextflow run nextflow-io/elixir-workshop-21 -r master -profile hpc_sge -with-docker
 
 .. literalinclude:: ../conf/sge.config
    :language: groovy
@@ -35,7 +35,7 @@ You can activate using this command line:
 
 .. code-block:: console
 
-  nextflow run lucacozzuto/elixir_NF -r main -profile hpc_slurm -with-docker
+  nextflow run nextflow-io/elixir-workshop-21 -r master -profile hpc_slurm -with-docker
 
 .. literalinclude:: ../conf/slurm.config
    :language: groovy
@@ -47,7 +47,7 @@ You can activate using this command line:
 
 .. code-block:: console
 
-  nextflow run lucacozzuto/elixir_NF -r main -profile cloud -with-docker
+  nextflow run nextflow-io/elixir-workshop-21 -r master -profile cloud -with-docker
 
 .. literalinclude:: ../conf/awsbatch.config
    :language: groovy
