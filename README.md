@@ -1,59 +1,34 @@
-<img align="right" href="https://biocore.crg.eu/" src="https://raw.githubusercontent.com/CRG-CNAG/BioCoreMiscOpen/master/logo/biocore-logo_small.png" />
+# Nextflow tutorial 
 
-# Nextflow DSL2 
+This repository contains the Nextflow tutorial for [Elixir workflow workshop](https://tess.elixir-europe.org/events/bioinformatics-workflow-management) 
+taking place on November 2021.
 
-Test pipeline for describing the potentialities of the Nextflow workflow orchestrator. 
+## Get started  
 
-## main.nf
-This is the main script that uses the modules and subworkflows stored within the **subworkflows** folder. The parameters of this pipeline are indicated in the **params.config** file and the configuration in the **nextflow.config** file. A test dataset is within the **data** folder.
+The simplest way to try out this tutorial consists accessing this repository via [Gitpod](https://gitpod.io/) cloud 
+environment.
 
-You can test it using either the [Docker](https://www.docker.com/) or the [Singularity](https://sylabs.io/guides/3.1/user-guide/index.html) container using the corresponding Nextflow parameters indicated by a **single hyphen**.
+To access the virtual training environment make sure to have a [GitHub](https://github.com) account and a [Gitpod](https://gitpod.io/) account, 
+then clicking on the following link:  
 
-```
-nextflow run main.nf -with-docker 
-```
+https://gitpod.io/#github.com/nextflow-io/elixir-workshop-21
 
-or
+(note: the setup of the environment may require a few minutes)
 
-```
-nextflow run main.nf -with-singularity
-```
+Once complete follow the tutorial at the link below: 
 
-
-## params.config
-Here we have the pipeline parameters. You can ovveride them via command line using **two hyphens**:
-
-```
-nextflow run main.nf -with-docker --reads "PATH/*.fastq.gz" --reference PATH/myref.fa.gz --output OUTPATH
-
-```
-
-## nextflow.config 
-This file defines the resources needed for the pipeline execution together with a number of platform-specific configurations, called profiles that are stored as single files within a folder named **conf**. 
-
-## conf
-This folder has a number of files, each one describing a single Nextflow configuration for each profile that can be chosen using the Nextflow parameter ```-profile```
-
-- standard: local computer
-- hpc_sge: [SGE](https://en.wikipedia.org/wiki/Oracle_Grid_Engine)
-- hpc_slurm: [slurm](https://en.wikipedia.org/wiki/Slurm_Workload_Manager)
-- cloud: [AWS batch](https://aws.amazon.com/es/batch/)
-
-Example: 
-
-```
-nextflow run main.nf -with-docker -profile slurm
-```
-
-## subworkflows
-This folder contains four Nextflow modules and a sub-workflow in three files:
-
-- **fastqc** module in the file **fastqc.nf**
-- **multiqc** module in the file **multiqc.nf**
-- **bowtie** sub-workflow, **Index** and **Align** modules in the file **bowtie.nf**
+https://nextflow-io.github.io/elixir-workshop-21/docs/
 
 
+## Supporting organisations 
 
-
-
+<div style="padding-bottom: .2em">
+<img width="250px" href="https://nextflow.io/" src="https://raw.githubusercontent.com/nextflow-io/trademark/master/nextflow2014_no-bg.png" />
+</div>
+<div style="padding-bottom: 1em">
+<img width="200px" href="https://biocore.crg.eu/" src="https://raw.githubusercontent.com/CRG-CNAG/BioCoreMiscOpen/master/logo/biocore-logo_small.png" />
+</div>
+<div>
+<img width="300px" href="https://seqera.io/" src="https://raw.githubusercontent.com/seqeralabs/logos/master/seqera-logo-black.png" />
+</div>
 
