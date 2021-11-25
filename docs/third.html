@@ -163,7 +163,7 @@
 <span class="cm"> */</span>
 <span class="n">Channel</span>
     <span class="o">.</span><span class="na">fromPath</span><span class="o">(</span> <span class="n">params</span><span class="o">.</span><span class="na">reads</span> <span class="o">)</span>  								                           
-    <span class="o">.</span><span class="na">ifEmpty</span> <span class="o">{</span> <span class="n">error</span> <span class="s2">&quot;Cannot find any reads matching: ${params.reads}&quot;</span> <span class="o">}</span>                                  <span class="c1">// if empty, complains</span>
+    <span class="o">.</span><span class="na">ifEmpty</span> <span class="o">{</span> <span class="n">error</span> <span class="s2">&quot;Cannot find any reads matching: ${params.reads}&quot;</span><span class="o">;</span> <span class="k">return</span> <span class="o">}</span>                                  <span class="c1">// if empty, complains</span>
     <span class="o">.</span><span class="na">set</span> <span class="o">{</span><span class="n">reads</span><span class="o">}</span> 											  <span class="c1">// make the channel &quot;reads&quot;</span>
 
 <span class="cm">/*</span>
