@@ -7,7 +7,7 @@ The Nextflow language
 The main file
 ==============
 
-We can use GitPod for looking at the code, go to workplace and load the **main.nf** file.
+We can use GitPod for looking at the code, go to workplace and load the **main.nf** file. As you can see the code is quite slim and has the single modules and workflows in separate files. 
 
 .. literalinclude:: ../main.nf
    :language: groovy
