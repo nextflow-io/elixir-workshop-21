@@ -1,14 +1,10 @@
-image:
-  file: .gitpod.Dockerfile
-
+# Commands to start on workspace startup
 tasks:
-    - init: dep ensure
-    - name: Download Nextflow Tutorial
-      command: |
-        echo 'Starting workspace !'
-        npx browser-sync start -s -w
+  - init: yarn install
+    command: yarn build
+             npx browser-sync start -s -w
 
-        
+# Ports to expose on workspace startup
 ports:
   - port: 8000
-  
+    onOpen: open-preview
