@@ -83,14 +83,14 @@ include { multiqc } from "${subwork_folder}/multiqc" addParams(OUTPUT: multiqcOu
  */
 Channel
     .fromPath( params.reads )  								                           
-    .ifEmpty { error "Cannot find any reads matching: ${params.reads}"; return }                                  // if empty, complains
+    .ifEmpty { error "Cannot find any reads matching: ${params.reads}"; exit }                            // if empty, complains
     .set {reads} 											  // make the channel "reads"
 
 /*
  *  Read the reference file. If empty, complains                  
  */
 reference = file(params.reference)
-if (!reference.exists()) { error "Cannot find any reference file matching: ${params.reference}"; return }  
+if (!reference.exists()) { error "Cannot find any reference file matching: ${params.reference}"; exit }  
 
 /*
  * MAIN workflow definition.
