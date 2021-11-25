@@ -84,14 +84,15 @@
 <span class="cm">/*</span>
 <span class="cm"> * Copyright (c) 2021, Centre for Genomic Regulation (CRG).</span>
 <span class="cm"> *</span>
-<span class="cm"> *   This file is part of &#39;CRG_course_NextFlow&#39;.</span>
+<span class="cm"> *   This file is part of &#39;nextflow-io/elixir-workshop-21&#39;</span>
+<span class="cm">&#39;.</span>
 <span class="cm"> *</span>
-<span class="cm"> *   CRG_course_NextFlow is free software: you can redistribute it and/or modify</span>
+<span class="cm"> *   elixir-workshop-21 is free software: you can redistribute it and/or modify</span>
 <span class="cm"> *   it under the terms of the GNU General Public License as published by</span>
 <span class="cm"> *   the Free Software Foundation, either version 3 of the License, or</span>
 <span class="cm"> *   (at your option) any later version.</span>
 <span class="cm"> *</span>
-<span class="cm"> *   CRG_course_NextFlow is distributed in the hope that it will be useful,</span>
+<span class="cm"> *   elixir-workshop-21 is distributed in the hope that it will be useful,</span>
 <span class="cm"> *   but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
 <span class="cm"> *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span>
 <span class="cm"> *   GNU General Public License for more details.</span>
@@ -150,7 +151,7 @@
 <span class="n">multiqcOutputFolder</span>   <span class="o">=</span> <span class="s2">&quot;${params.output}/ouptut_multiQC&quot;</span>
 
 <span class="cm">/*</span>
-<span class="cm"> * Defining the module / subworkflow path, and iclude the elements</span>
+<span class="cm"> * Defining the module / subworkflow path, and include the elements</span>
 <span class="cm"> */</span>
 <span class="n">subwork_folder</span> <span class="o">=</span> <span class="s2">&quot;${projectDir}/subworkflows/&quot;</span>
 <span class="n">include</span> <span class="o">{</span> <span class="n">fastqc</span> <span class="o">}</span> <span class="n">from</span> <span class="s2">&quot;${subwork_folder}/fastqc&quot;</span> <span class="n">addParams</span><span class="o">(</span><span class="nl">OUTPUT:</span> <span class="n">fastqcOutputFolder</span><span class="o">)</span>
