@@ -82,9 +82,8 @@ include { multiqc } from "${subwork_folder}/multiqc" addParams(OUTPUT: multiqcOu
  * Read the files indicated by the wildcard                   
  */
 Channel
-    .fromPath( params.reads )  								                           
-    .ifEmpty { error "Cannot find any reads matching: ${params.reads}"; exit }                            // if empty, complains
-    .set {reads} 											  // make the channel "reads"
+    .fromPath( params.reads, checkIfExists: true )  		// if empty, complains						                           
+    .set {reads} 						// make the channel "reads"
 
 /*
  *  Read the reference file. If empty, complains                  
