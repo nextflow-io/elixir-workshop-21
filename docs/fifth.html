@@ -180,7 +180,7 @@ In this file we just include a number of single configuration files, each one fo
 <span class="n">aws</span><span class="o">.</span><span class="na">batch</span><span class="o">.</span><span class="na">cliPath</span> <span class="o">=</span> <span class="s1">&#39;/home/ec2-user/miniconda/bin/aws&#39;</span>
 
 <span class="c1">// Here we used as and work directory for intermediate files the S3 bucket</span>
-<span class="n">aws</span><span class="o">.</span><span class="na">workDir</span> <span class="o">=</span> <span class="s1">&#39;s3://nf-elixir/scratch&#39;</span>
+<span class="n">workDir</span> <span class="o">=</span> <span class="s1">&#39;s3://nf-elixir/scratch&#39;</span>
 
 <span class="n">process</span> <span class="o">{</span>
     <span class="c1">// definition of the awsbatch executor. Run the pipeline in a AWS node able to submit jobs via batch submission</span>
