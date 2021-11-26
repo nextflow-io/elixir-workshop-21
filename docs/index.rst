@@ -38,6 +38,9 @@ Supporting organisations
     <img width="300px" href="https://seqera.io/" src="https://raw.githubusercontent.com/seqeralabs/logos/master/seqera-logo-black.png" />
    </div>
 
+| 
+| 
+|
 
 Contents:
 ---------------------------
