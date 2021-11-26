@@ -1,3 +1,3 @@
 GitHub Pages of [nextflow-io/elixir-workshop-21](https://github.com/nextflow-io/elixir-workshop-21.git)
 ===
-Sphinx html documentation of [fdb55d70](https://github.com/nextflow-io/elixir-workshop-21/tree/fdb55d708a942dfd34ce8307f788947cd0294b43)
+Sphinx html documentation of [ea928750](https://github.com/nextflow-io/elixir-workshop-21/tree/ea92875006d12397c869498501bee5279f6ec3ce)
