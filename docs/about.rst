@@ -13,7 +13,7 @@ Reproducible research and data analysis using Nextflow pipelines
 
 Course page: https://elixir-workflow-workshop.github.io/2021/
 
-Course materials: https://github.com/biocorecrg/elixir_NF/edit/main/README.md
+Course materials: https://github.com/nextflow-io/elixir-workshop-21
 
 Day 3, Wednesday 1st Dec, 09:30-12:00.
 
