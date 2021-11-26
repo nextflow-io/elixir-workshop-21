@@ -40,6 +40,7 @@ Supporting organisations
 
 
 Contents:
+---------------------------
 
 .. toctree::
    :maxdepth: 1
