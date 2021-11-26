@@ -12,7 +12,7 @@ Get started
 The simplest way to try out this tutorial consists accessing this repository via `Gitpod <https://gitpod.io/>`__ cloud 
 environment.
 
-To access the virtual training environment make sure to have a `GitHub account <https://github.com`>__ account and a `Gitpod <https://gitpod.io/>`__, then clicking on the following link:  
+To access the virtual training environment make sure to have a `GitHub account <https://github.com>`__ account and a `Gitpod <https://gitpod.io/>`__, then clicking on the following link:  
 
 `https://gitpod.io/#github.com/nextflow-io/elixir-workshop-21 <https://gitpod.io/#github.com/nextflow-io/elixir-workshop-21>`__ 
 
