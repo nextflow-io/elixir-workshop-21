@@ -19,7 +19,7 @@ Once complete follow the tutorial at the link below:
 
 https://nextflow-io.github.io/elixir-workshop-21/docs/
 
-## Supporting organisations 
+## Supported by:
 
 <div style="padding-bottom: .2em">
 <img width="250px" href="https://nextflow.io/" src="https://raw.githubusercontent.com/nextflow-io/trademark/master/nextflow2014_no-bg.png" />
@@ -29,5 +29,8 @@ https://nextflow-io.github.io/elixir-workshop-21/docs/
 </div>
 <div>
 <img width="300px" href="https://seqera.io/" src="https://raw.githubusercontent.com/seqeralabs/logos/master/seqera-logo-black.png" />
+</div>
+<div style="padding-bottom: 1em">
+<img width="200px" href="https://www.crg.eu/" src="https://www.crg.eu/sites/default/files/logo_1.png" />
 </div>
 
