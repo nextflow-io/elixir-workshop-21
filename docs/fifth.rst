@@ -43,11 +43,15 @@ You can activate using this command line:
 
 AWS BATCH
 =============
-You can activate using this command line:
-
-.. code-block:: console
-
-  nextflow run nextflow-io/elixir-workshop-21 -r master -profile cloud -with-docker
+We can run our pipeline in AWS batch just by changing the following values in the **awsbatch.config** file:
 
 .. literalinclude:: ../conf/awsbatch.config
    :language: groovy
+
+And then launching the pipeline from the local repository:
+
+.. code-block:: console
+
+  nextflow run nextflow run main.nf -with-docker  -profile cloud -bg > log 
+
+
