@@ -50,7 +50,9 @@ Supporting organisations
     </div>
     <div>
     <img width="300px" href="https://seqera.io/" src="https://raw.githubusercontent.com/seqeralabs/logos/master/seqera-logo-black.png" />
-   </div>
+<div style="padding-bottom: 1em">
+<img width="200px" href="https://www.crg.eu/" src="https://www.crg.eu/sites/default/files/logo_1.png" />
+</div>
 
 | 
 | 
