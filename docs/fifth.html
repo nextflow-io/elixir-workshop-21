@@ -167,10 +167,7 @@ In this file we just include a number of single configuration files, each one fo
 </section>
 <section id="aws-batch">
 <h2>AWS BATCH<a class="headerlink" href="#aws-batch" title="Permalink to this headline"></a></h2>
-<p>You can activate using this command line:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r master -profile cloud -with-docker</span>
-</pre></div>
-</div>
+<p>We can run our pipeline in AWS batch just by changing the following values in the <strong>awsbatch.config</strong> file:</p>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">* This configuration file is the one used when indicating the Nextflow parameter -profile cloud</span>
 <span class="cm">*/</span>
@@ -205,6 +202,10 @@ In this file we just include a number of single configuration files, each one fo
           <span class="n">cpus</span><span class="o">=</span><span class="s1">&#39;2&#39;</span>
        <span class="o">}</span>
 <span class="o">}</span>
+</pre></div>
+</div>
+<p>And then launching the pipeline from the local repository:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow run main.nf -with-docker  -profile cloud -bg &gt; log</span>
 </pre></div>
 </div>
 </section>
