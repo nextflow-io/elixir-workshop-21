@@ -23,6 +23,20 @@ Once complete follow the tutorial at the link below:
 
 `https://nextflow-io.github.io/elixir-workshop-21/docs/ <https://nextflow-io.github.io/elixir-workshop-21/docs/>`__
 
+Contents:
+---------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   about
+   first
+   second
+   third
+   fourth
+   fifth
+
+
 Supporting organisations 
 ---------------------------
 
@@ -40,18 +54,5 @@ Supporting organisations
 
 | 
 | 
-|
 
-Contents:
----------------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   about
-   first
-   second
-   third
-   fourth
-   fifth
 
