@@ -4,13 +4,33 @@
 Launching a pipeline
 *******************
 
-You can launch a Nextflow pipeline by simply executing this code
+You can launch a Nextflow pipeline by simply executing this code:
 
 .. code-block:: console
 
-  nextflow run PIPELINENAME.nf
+  nextflow run main.nf --help
 
-But is really convenient to store your code in one of the sharing platform that are supported.
+We should see something like:
+
+.. code-block:: console
+
+	nextflow run main.nf --help
+	Picked up JAVA_TOOL_OPTIONS: -Xmx2576m
+	N E X T F L O W  ~  version 21.10.3
+	Launching `main.nf` [distracted_avogadro] - revision: e434616b3d
+
+	BIOCORE@CRG - N F TESTPIPE  
+	=============================================
+	reads                           : /workspace/elixir-workshop-21/data/*.fastq.gz
+	reference                       : /workspace/elixir-workshop-21/data/chr19.fasta.gz
+	output                          : ./output
+
+	This is the Biocore's Nextflow test pipeline
+	Please define reads, reference and output!
+
+	Enjoy!
+
+But is really convenient to store your code in one of the sharing platform that are supported, so let's try a different thing.
 
 Sharing Nextflow code
 ======================
@@ -42,10 +62,34 @@ The default platform is **GitHub**, so we will use this repository as an example
 We can launch the pipeline just by typing:
 
 .. code-block:: console
+  mkdir github_repo
+  cd github_repo
+  
+  nextflow run nextflow-io/elixir-workshop-21 -r master --help
 
-  nextflow run nextflow-io/elixir-workshop-21 -r master
+In this way Nextflow will pull the pipeline from the GitHub repository, store it at ``$HOME/.nextflow/assets`` and launch it.
 
-In this way Nextflow will pull the pipeline from the GitHub repository, store it at ``$PATH/.nextflow/assets`` and launch it.
+.. code-block:: console
+   :emphasize-lines: 3,5
+
+	nextflow run nextflow-io/elixir-workshop-21 -r master --help
+	Picked up JAVA_TOOL_OPTIONS: -Xmx2576m
+	N E X T F L O W  ~  version 21.10.3
+	Pulling nextflow-io/elixir-workshop-21 ...
+	 downloaded from https://github.com/nextflow-io/elixir-workshop-21.git
+	Launching `nextflow-io/elixir-workshop-21` [prickly_panini] - revision: 12648e4544 [master]
+
+	BIOCORE@CRG - N F TESTPIPE  
+	=============================================
+	reads                           : /home/gitpod/.nextflow/assets/nextflow-io/elixir-workshop-21/data/*.fastq.gz
+	reference                       : /home/gitpod/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz
+	output                          : ./output
+
+	This is the Biocore's Nextflow test pipeline
+	Please define reads, reference and output!
+
+	Enjoy!
+
 
 Linux containers
 ===========================
