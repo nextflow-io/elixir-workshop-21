@@ -6,7 +6,8 @@ Introduction to Nextflow
 
 Enabling scalable and reproducible scientific workflows using software containers.  `www.nextflow.io <https://www.nextflow.io>`_.
 
-We can open our test repository in GitPod by clicking this `link <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__. This will take some minutes to set up so we can introduce a bit Nextflow
+.. tip::
+  We can open our test repository in GitPod by clicking this `link <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__. This will take some minutes to set up so we can introduce a bit Nextflow
 
 
 What is Nextflow?
