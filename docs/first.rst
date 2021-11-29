@@ -77,8 +77,8 @@ For each process **a temporary folder is created and is cached (or not) once res
 Workflow structure
 ==================
 
-The workflows can be represented as graphs where the nodes are the **processes** and the edges are the **channels**.
-The **processes** are blocks of code that can be executed - such as scripts or programs - while the **channels** are asynchronous queues able to **connect processes among them via input / output**. Some methods, called **operators** are provided for reshaping and combining the channels. 
+The workflows can be represented as graphs where the nodes are the `processes <https://www.nextflow.io/docs/latest/process.html>`__ and the edges are the `channels <https://www.nextflow.io/docs/latest/channel.html>`__.
+The `processes <https://www.nextflow.io/docs/latest/process.html>`__ are blocks of code that can be executed - such as scripts or programs - while the `channels <https://www.nextflow.io/docs/latest/channel.html>`__ are asynchronous queues able to **connect processes among them via input / output**. Some methods, called `operators <https://www.nextflow.io/docs/latest/operator.html>`__ are provided for reshaping and combining the channels. 
 
 
 .. image:: images/wf_example.png
