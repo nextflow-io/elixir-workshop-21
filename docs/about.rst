@@ -9,11 +9,11 @@ About the course
    :toctree: generated
 
 
-Reproducible research and data analysis using Nextflow pipelines
+Reproducible research and data analysis using Nextflow workflow system
 
 Course page: https://elixir-workflow-workshop.github.io/2021/
 
-Course materials: https://github.com/nextflow-io/elixir-workshop-21
+Course materials: https://github.com/nextflow-io/elixir-workshop-21#readme
 
 Day 3, Wednesday 1st Dec, 09:30-12:00.
 
