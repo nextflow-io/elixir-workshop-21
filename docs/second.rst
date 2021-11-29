@@ -135,7 +135,6 @@ In this example we will use `Docker <https://www.docker.com/>`__: the default im
 
   N E X T F L O W  ~  version 21.04.3
   Pulling nextflow-io/elixir-workshop-21 ...
-  downloaded from https://nextflow-io/elixir-workshop-21.git
   Launching `nextflow-io/elixir-workshop-21` [determined_minsky] - revision: 711f9f806d [master]
 
   BIOCORE@CRG - N F TESTPIPE  ~  version 1.0
