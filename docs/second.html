@@ -78,11 +78,29 @@
              
   <section id="launching-a-pipeline">
 <span id="second-page"></span><h1>Launching a pipeline<a class="headerlink" href="#launching-a-pipeline" title="Permalink to this headline"></a></h1>
-<p>You can launch a Nextflow pipeline by simply executing this code</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run PIPELINENAME.nf</span>
+<p>You can launch a Nextflow pipeline by simply executing this code:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run main.nf --help</span>
 </pre></div>
 </div>
-<p>But is really convenient to store your code in one of the sharing platform that are supported.</p>
+<p>We should see something like:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run main.nf --help</span>
+<span class="go">Picked up JAVA_TOOL_OPTIONS: -Xmx2576m</span>
+<span class="go">N E X T F L O W  ~  version 21.10.3</span>
+<span class="go">Launching `main.nf` [distracted_avogadro] - revision: e434616b3d</span>
+
+<span class="go">BIOCORE@CRG - N F TESTPIPE</span>
+<span class="go">=============================================</span>
+<span class="go">reads                           : /workspace/elixir-workshop-21/data/*.fastq.gz</span>
+<span class="go">reference                       : /workspace/elixir-workshop-21/data/chr19.fasta.gz</span>
+<span class="go">output                          : ./output</span>
+
+<span class="go">This is the Biocore&#39;s Nextflow test pipeline</span>
+<span class="go">Please define reads, reference and output!</span>
+
+<span class="go">Enjoy!</span>
+</pre></div>
+</div>
+<p>But is really convenient to store your code in one of the sharing platform that are supported, so let’s try a different thing.</p>
 <section id="sharing-nextflow-code">
 <h2>Sharing Nextflow code<a class="headerlink" href="#sharing-nextflow-code" title="Permalink to this headline"></a></h2>
 <p>Nextflow supports a number of code sharing platforms: <strong>BitBucket</strong>, <strong>GitHub</strong>, and <strong>GitLab</strong>.
@@ -108,10 +126,26 @@ The default platform is <strong>GitHub</strong>, so we will use this repository 
 </tbody>
 </table>
 <p>We can launch the pipeline just by typing:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r master</span>
+<p>In this way Nextflow will pull the pipeline from the GitHub repository, store it at <code class="docutils literal notranslate"><span class="pre">$HOME/.nextflow/assets</span></code> and launch it.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">     nextflow run nextflow-io/elixir-workshop-21 -r master --help</span>
+<span class="go">     Picked up JAVA_TOOL_OPTIONS: -Xmx2576m</span>
+<span class="hll"><span class="go">     N E X T F L O W  ~  version 21.10.3</span>
+</span><span class="go">     Pulling nextflow-io/elixir-workshop-21 ...</span>
+<span class="hll"><span class="go">      downloaded from https://github.com/nextflow-io/elixir-workshop-21.git</span>
+</span><span class="go">     Launching `nextflow-io/elixir-workshop-21` [prickly_panini] - revision: 12648e4544 [master]</span>
+
+<span class="go">     BIOCORE@CRG - N F TESTPIPE</span>
+<span class="go">     =============================================</span>
+<span class="go">     reads                           : /home/gitpod/.nextflow/assets/nextflow-io/elixir-workshop-21/data/*.fastq.gz</span>
+<span class="go">     reference                       : /home/gitpod/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz</span>
+<span class="go">     output                          : ./output</span>
+
+<span class="go">     This is the Biocore&#39;s Nextflow test pipeline</span>
+<span class="go">     Please define reads, reference and output!</span>
+
+<span class="go">     Enjoy!</span>
 </pre></div>
 </div>
-<p>In this way Nextflow will pull the pipeline from the GitHub repository, store it at <code class="docutils literal notranslate"><span class="pre">$PATH/.nextflow/assets</span></code> and launch it.</p>
 </section>
 <section id="linux-containers">
 <h2>Linux containers<a class="headerlink" href="#linux-containers" title="Permalink to this headline"></a></h2>
