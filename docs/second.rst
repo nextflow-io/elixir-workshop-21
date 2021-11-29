@@ -37,7 +37,7 @@ Sharing Nextflow code
 
 Nextflow supports a number of code sharing platforms: **BitBucket**, **GitHub**, and **GitLab**.
 This feature allows running pipelines by just pointing to an online repository without caring about downloading, installing etc. 
-The default platform is **GitHub**, so we will use this repository as an example.
+The default platform is **GitHub**, so we will use this platform and in particular `this repository <https://github.com/nextflow-io/elixir-workshop-21>`__ as an example.
 
 .. |github| image:: images/GitHub-Logo.png
   :width: 200
