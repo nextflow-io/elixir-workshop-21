@@ -7,6 +7,12 @@ Introduction to Nextflow
 Enabling scalable and reproducible scientific workflows using software containers.  `www.nextflow.io <https://www.nextflow.io>`_.
 
 
+Launching GitPod
+======================
+
+We can open our test repository in GitPod by clicking this `link <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__. This will take some minutes to set up so we can introduce a bit Nextflow
+
+
 What is Nextflow?
 ======================
 
@@ -99,7 +105,6 @@ Installation
 
     java -version
 
-We can open our repository in GitPod by clicking this `link <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__.
 
 On the left we have the different files. We can then open a terminal as indicated in the picture:
 
