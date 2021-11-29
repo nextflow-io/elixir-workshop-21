@@ -1,8 +1,11 @@
 .. _home-page:
 
-*******************
-Courses @ Elixir Nov 2021
-*******************
+*********************************
+Elixir workflow workshop Nov 2021
+*********************************
+
+Introduction to Nextflow workflow system
+========================================
 
 This repository contains the Nextflow tutorial for `Elixir workflow workshop <https://tess.elixir-europe.org/events/bioinformatics-workflow-management>`__ taking place on November 2021.
 

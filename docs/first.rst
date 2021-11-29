@@ -1,45 +1,48 @@
 .. _first-page:
 
-*******************
+*************************
 Introduction to Nextflow
-*******************
+*************************
 
-Enabling scalable and reproducible scientific workflows using software containers.  `www.nextflow.io <https://www.nextflow.io>`_.
+Enabling scalable and reproducible scientific workflows `Nextflow <https://www.nextflow.io>`_ and software containers.
 
 .. tip::
   We can open our test repository in GitPod by clicking this `link <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__. This will take some minutes to set up so we can introduce a bit Nextflow
 
 
 What is Nextflow?
-======================
+==================
 
-`Nextflow <https://www.nextflow.io>`__ is a domain specific language (DSL) for workflow orchestration that stems from `Groovy <https://groovy-lang.org/>`__. It enables scalable and reproducible workflows using software containers.
-It was developed at the `CRG <www.crg.eu>`__ in the Lab of Cedric Notredame by `Paolo Di Tommaso <https://github.com/pditommaso>`__.
-The Nextflow documentation is `available here <https://www.nextflow.io/docs/latest/>`__ and you can ask help to the community using their `gitter channel <https://gitter.im/nextflow-io/nextflow>`__
+`Nextflow <https://www.nextflow.io>`_ is a reactive workflow system and a programming DSL that eases the writing of data-intensive computational pipelines.
 
-.. image:: images/nextf_groovy.png
-  :width: 600
+It enables scalable and reproducible scientific workflows using software containers that can be deployed in a portable manner
+across clusters and clouds.
 
-In 2020, Nextflow has been upgraded from DSL1 version to DSL2. In this course we will use exclusively DSL2.
+Project documentation is available `at this link <https://www.nextflow.io/docs/latest/>`_. Help and support is available
+through the community `Gitter channel <https://gitter.im/nextflow-io/nextflow>`_ and `GitHub discussion group <https://github.com/nextflow-io/nextflow/discussions>`_
+
+Nextflow project was setup at the `Centre for Genomics Regulation (CRG) <https://www.crg.eu>`_, currently is supported by `Seqera Labs <https://www.seqera.io>`_.
 
 What is Nextflow for?
 ---------------------
 
 It is for making pipelines without caring about parallelization, dependencies, intermediate file names, data structures, handling exceptions, resuming executions, etc.
 
-It was published in `Nature Biotechnology in 2017 <https://pubmed.ncbi.nlm.nih.gov/28398311/>`__.
+Nextflow has been published on `Nature Biotechnology <https://pubmed.ncbi.nlm.nih.gov/28398311/>`_.
+If you use it in your researcher, please cite it.
 
 .. image:: images/NF_pub.png
   :width: 600
 
 
-There is a growing number of `PubMed <https://pubmed.ncbi.nlm.nih.gov/?term=nextflow&timeline=expanded&sort=pubdate&sort_order=asc>`__ publications citing Nextflow.
+Number of `PubMed <https://pubmed.ncbi.nlm.nih.gov/?term=nextflow&timeline=expanded&sort=pubdate&sort_order=asc>`__ publications citing Nextflow.
 
 .. image:: images/NF_mentioning.png
   :width: 600
 
 
-Here you have a curated list of `Nextflow pipelines <https://github.com/nextflow-io/awesome-nextflow>`__ and a collection of pipelines written collaboratively in the framework of the `NF-core <https://nf-co.re/pipelines>`__ project.
+A curated list of `Nextflow pipelines <https://github.com/nextflow-io/awesome-nextflow>`__ and a collection of
+pipelines written collaboratively by the `nf-core <https://nf-co.re/pipelines>`__ community.
 
 
 Main advantages
