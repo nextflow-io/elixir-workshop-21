@@ -90,8 +90,17 @@ The `processes <https://www.nextflow.io/docs/latest/process.html>`__ are blocks 
 Processes are independent from each another and can be run in parallel, depending on the number of elements in a channel.
 In the previous example, processes **A**, **B** and **C** can be run in parallel and only when they **ALL** end the process **D** is triggered.
 
-Installation
-============
+Practical part
+================
+
+Once the `GitPod <https://gitpod.io/#https://github.com/nextflow-io/elixir-workshop-21>`__ page is loaded, we can then open a terminal as indicated in the picture:
+
+.. image:: images/gitpod1.png
+  :width: 800
+
+
+Installation of Nextflow
+--------------
 
 .. note::
   You need at least the Java version 8 for the Nextflow installation.
@@ -101,11 +110,6 @@ Installation
 
     java -version
 
-
-On the left we have the different files. We can then open a terminal as indicated in the picture:
-
-.. image:: images/gitpod1.png
-  :width: 800
 
 And we can install Nextflow using this command:
 
