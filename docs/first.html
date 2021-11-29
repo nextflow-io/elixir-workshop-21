@@ -135,8 +135,8 @@ For each process <strong>a temporary folder is created and is cached (or not) on
 </section>
 <section id="workflow-structure">
 <h2>Workflow structure<a class="headerlink" href="#workflow-structure" title="Permalink to this headline"></a></h2>
-<p>The workflows can be represented as graphs where the nodes are the <strong>processes</strong> and the edges are the <strong>channels</strong>.
-The <strong>processes</strong> are blocks of code that can be executed - such as scripts or programs - while the <strong>channels</strong> are asynchronous queues able to <strong>connect processes among them via input / output</strong>. Some methods, called <strong>operators</strong> are provided for reshaping and combining the channels.</p>
+<p>The workflows can be represented as graphs where the nodes are the <a class="reference external" href="https://www.nextflow.io/docs/latest/process.html">processes</a> and the edges are the <a class="reference external" href="https://www.nextflow.io/docs/latest/channel.html">channels</a>.
+The <a class="reference external" href="https://www.nextflow.io/docs/latest/process.html">processes</a> are blocks of code that can be executed - such as scripts or programs - while the <a class="reference external" href="https://www.nextflow.io/docs/latest/channel.html">channels</a> are asynchronous queues able to <strong>connect processes among them via input / output</strong>. Some methods, called <a class="reference external" href="https://www.nextflow.io/docs/latest/operator.html">operators</a> are provided for reshaping and combining the channels.</p>
 <a class="reference internal image-reference" href="../_images/wf_example.png"><img alt="../_images/wf_example.png" src="../_images/wf_example.png" style="width: 600px;" /></a>
 <p>Processes are independent from each another and can be run in parallel, depending on the number of elements in a channel.
 In the previous example, processes <strong>A</strong>, <strong>B</strong> and <strong>C</strong> can be run in parallel and only when they <strong>ALL</strong> end the process <strong>D</strong> is triggered.</p>
