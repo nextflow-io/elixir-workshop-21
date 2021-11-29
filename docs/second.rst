@@ -70,7 +70,7 @@ We can launch the pipeline just by typing:
 In this way Nextflow will pull the pipeline from the GitHub repository, store it at ``$HOME/.nextflow/assets`` and launch it.
 
 .. code-block:: console
-   :emphasize-lines: 3,5
+   :emphasize-lines: 3,4,5
 
 	nextflow run nextflow-io/elixir-workshop-21 -r master --help
 	Picked up JAVA_TOOL_OPTIONS: -Xmx2576m
