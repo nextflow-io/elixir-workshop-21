@@ -332,8 +332,9 @@ We can check the appearance of a new pipeline and the content
 .. image:: images/tower.gif
   :width: 800
 
-Real case
------------------
+|
+|
+
 Here you have a real case of a two days run with almost 6 thousands jobs.
 
 .. image:: images/huge_nf.jpeg
