@@ -45,7 +45,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#linux-containers">Linux containers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#work-folder-structure-and-process-isolation">Work folder structure and process isolation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#resuming-and-changing-parameters">Resuming and changing parameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reporting-and-monitoring">Reporting and monitoring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reporting-and-monitoring">Reporting and monitoring</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#real-case">Real case</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="third.html">The Nextflow language</a></li>
@@ -345,9 +348,12 @@ For this we need to tell Nextflow which is the right container engine. We can do
 </div>
 <p>We can check the appearance of a new pipeline and the content</p>
 <a class="reference internal image-reference" href="../_images/tower.gif"><img alt="../_images/tower.gif" src="../_images/tower.gif" style="width: 800px;" /></a>
-<p>Here you have a real case of a two days job with almost 6 thousands jobs.</p>
-<a class="reference internal image-reference" href="../_images/huge_nf.jpeg"><img alt="../_images/huge_nf.jpeg" src="../_images/huge_nf.jpeg" style="width: 800px;" /></a>
+<section id="real-case">
+<h3>Real case<a class="headerlink" href="#real-case" title="Permalink to this headline"></a></h3>
+<p>Here you have a real case of a two days run with almost 6 thousands jobs.</p>
+<a class="reference internal image-reference" href="../_images/huge_nf.jpeg"><img alt="../_images/huge_nf.jpeg" src="../_images/huge_nf.jpeg" style="width: 500px;" /></a>
 <p>When the pipeline is finished you also get a mail. Adding the parameter <code class="docutils literal notranslate"><span class="pre">-with-report</span></code> will produce a final <a class="reference external" href="https://nextflow-io.github.io/elixir-workshop-21/docs/report.html">html report</a> with all the information that was in the tower.nf website.</p>
+</section>
 </section>
 </section>
 
