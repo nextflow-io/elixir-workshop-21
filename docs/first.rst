@@ -35,7 +35,7 @@ If you use it in your researcher, please cite it.
   :width: 600
 
 
-Number of `PubMed <https://pubmed.ncbi.nlm.nih.gov/?term=nextflow&timeline=expanded&sort=pubdate&sort_order=asc>`__ publications with the word Nextflow.
+Number of `PubMed <https://pubmed.ncbi.nlm.nih.gov/?term=nextflow&timeline=expanded&sort=pubdate&sort_order=asc>`__ publications with the word Nextflow, while the original paper has been cited 257 times.
 
 .. image:: images/NF_mentioning.png
   :width: 600
