@@ -245,12 +245,11 @@ You can execute again the pipeline by using the Nextflow parameter ``-resume`` a
 
 
 .. code-block:: console
-   :emphasize-lines: 18
 
-  nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads "*.fastq.gz" -resume > log
-  
+	nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads "*.fastq.gz" -resume > log
+ 	 
   	cat log 
-  
+ 	 
 	N E X T F L O W  ~  version 21.10.3
 	Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [master]
 	NOTE: Your local project version looks outdated - a different revision is available in the remote repository [cf2612db62]
