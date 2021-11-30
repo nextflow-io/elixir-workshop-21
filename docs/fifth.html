@@ -184,15 +184,15 @@ In this file we just include a number of single configuration files, each one fo
         <span class="n">time</span><span class="o">=</span><span class="s1">&#39;6h&#39;</span>
 
            <span class="c1">// retry three times if fails and then fail</span>
-            <span class="nl">withLabel:</span> <span class="s1">&#39;retry_and_fail&#39;</span> <span class="o">{</span>
-                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">10</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
+            <span class="nl">withLabel:</span> <span class="s1">&#39;twocpus&#39;</span> <span class="o">{</span>
+                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">20</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
                   <span class="n">errorStrategy</span> <span class="o">=</span> <span class="s1">&#39;retry&#39;</span> 
                   <span class="n">maxRetries</span> <span class="o">=</span> <span class="mi">3</span>	
             <span class="o">}</span>
 
            <span class="c1">// retry three times if fails and then fail</span>
             <span class="nl">withLabel:</span> <span class="s1">&#39;retry_and_ignore&#39;</span> <span class="o">{</span>
-                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">10</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
+                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">20</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
                 <span class="n">errorStrategy</span> <span class="o">=</span> <span class="o">{</span><span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="o">?</span> <span class="s1">&#39;retry&#39;</span> <span class="o">:</span> <span class="s1">&#39;ignore&#39;</span><span class="o">}</span>
             <span class="o">}</span>
 <span class="o">}</span>
