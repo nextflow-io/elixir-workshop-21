@@ -331,11 +331,13 @@ We can check the appearance of a new pipeline and the content
 
 .. image:: images/tower.gif
   :width: 800
-  
-Here you have a real case of a two days job with almost 6 thousands jobs.
+
+Real case
+-----------------
+Here you have a real case of a two days run with almost 6 thousands jobs.
 
 .. image:: images/huge_nf.jpeg
-  :width: 800
+  :width: 500
 
 When the pipeline is finished you also get a mail. Adding the parameter ``-with-report`` will produce a final `html report <https://nextflow-io.github.io/elixir-workshop-21/docs/report.html>`__ with all the information that was in the tower.nf website.
 
