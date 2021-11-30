@@ -245,6 +245,7 @@ You can execute again the pipeline by using the Nextflow parameter ``-resume`` a
 
 
 .. code-block:: console
+   :emphasize-lines: 18
 
   nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads "*.fastq.gz" -resume > log
   
