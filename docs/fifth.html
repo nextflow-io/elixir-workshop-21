@@ -169,7 +169,10 @@ In this file we just include a number of single configuration files, each one fo
 <section id="retry-example">
 <h2>RETRY EXAMPLE<a class="headerlink" href="#retry-example" title="Permalink to this headline"></a></h2>
 <p>retry_example.config</p>
-<p>This is just an example for showing how to make configuration for retrying / ignoring jobs</p>
+<p>You can activate using this command line:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -r master -profile retry -with-docker</span>
+</pre></div>
+</div>
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="cm">/*</span>
 <span class="cm">* This configuration file is the an example for showing fail retry</span>
 <span class="cm">*/</span>
