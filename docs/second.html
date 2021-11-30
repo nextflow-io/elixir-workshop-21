@@ -274,6 +274,34 @@ For this we need to tell Nextflow which is the right container engine. We can do
 <p>Nextflow parameters are indicated by one dash (-). Pipeline parameters by two dahses (--)</p>
 </div>
 <p>You can execute again the pipeline by using the Nextflow parameter <code class="docutils literal notranslate"><span class="pre">-resume</span></code> and send it to background with <code class="docutils literal notranslate"><span class="pre">-bg</span></code>.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">nextflow run nextflow-io/elixir-workshop-21 -with-docker -r master -bg --reads &quot;*.fastq.gz&quot; -resume &gt; log</span>
+
+<span class="go">cat log</span>
+
+<span class="go">N E X T F L O W  ~  version 21.10.3</span>
+<span class="go">Launching `nextflow-io/elixir-workshop-21` [jolly_visvesvaraya] - revision: 040cd63a79 [master]</span>
+<span class="go">NOTE: Your local project version looks outdated - a different revision is available in the remote repository [cf2612db62]</span>
+
+<span class="go">BIOCORE@CRG - N F TESTPIPE  ~  version 1.0</span>
+<span class="go">=============================================</span>
+<span class="go">reads                           : *.fastq.gz</span>
+<span class="go">reference                       : /Users/lcozzuto/.nextflow/assets/nextflow-io/elixir-workshop-21/data/chr19.fasta.gz</span>
+<span class="go">output                          : ./output</span>
+
+<span class="go">[8b/cfcc4f] Submitted process &gt; fastqc (test1.fastq.gz)</span>
+<span class="go">[5b/71ae88] Submitted process &gt; fastqc (test2.fastq.gz)</span>
+<span class="go">[6e/1cc3be] Cached process &gt; BOWTIE:Index (chr19.fasta.gz)</span>
+<span class="go">[97/2a6a72] Submitted process &gt; BOWTIE:Align (test2.fastq.gz)</span>
+<span class="go">[0a/951748] Submitted process &gt; BOWTIE:Align (test1.fastq.gz)</span>
+<span class="go">/Users/lcozzuto/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.log</span>
+<span class="go">/Users/lcozzuto/work/97/2a6a7245675d7913019aa8983c5e55/test2.fastq.gz.sam</span>
+<span class="go">/Users/lcozzuto/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.log</span>
+<span class="go">/Users/lcozzuto/work/0a/9517481ef43b0e88163ec5f8b4d71f/test1.fastq.gz.sam</span>
+<span class="go">[f7/1b5746] Submitted process &gt; multiqc</span>
+
+<span class="go">Done! Open the following report in your browser --&gt; ./output/ouptut_multiQC/multiqc_report.html</span>
+</pre></div>
+</div>
 <p>You can see that the <strong>indexing</strong> of the genome is cached while the processes that are influenced by the new files are triggered.</p>
 </section>
 <section id="reporting-and-monitoring">
