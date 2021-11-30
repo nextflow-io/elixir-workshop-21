@@ -45,7 +45,11 @@ RETRY EXAMPLE
 
 retry_example.config
 
-This is just an example for showing how to make configuration for retrying / ignoring jobs
+You can activate using this command line:
+
+.. code-block:: console
+
+  nextflow run nextflow-io/elixir-workshop-21 -r master -profile retry -with-docker
 
 .. literalinclude:: ../conf/retry_example.config
    :language: groovy
