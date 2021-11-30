@@ -40,6 +40,17 @@ You can activate using this command line:
 .. literalinclude:: ../conf/slurm.config
    :language: groovy
    
+RETRY EXAMPLE
+==============
+
+retry_example.config
+
+This is just an example for showing how to make configuration for retrying / ignoring jobs
+
+.. literalinclude:: ../conf/retry_example.config
+   :language: groovy
+   
+
 
 AWS BATCH
 =============
