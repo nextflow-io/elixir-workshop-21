@@ -187,18 +187,18 @@ In this file we just include a number of single configuration files, each one fo
         <span class="n">time</span><span class="o">=</span><span class="s1">&#39;6h&#39;</span>
 
            <span class="c1">// retry three times if fails and then fail</span>
-            <span class="nl">withLabel:</span> <span class="s1">&#39;twocpus&#39;</span> <span class="o">{</span>
-                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">20</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
-                  <span class="n">errorStrategy</span> <span class="o">=</span> <span class="s1">&#39;retry&#39;</span> 
-                  <span class="n">maxRetries</span> <span class="o">=</span> <span class="mi">3</span>	
-            <span class="o">}</span>
-
+<span class="hll">            <span class="nl">withLabel:</span> <span class="s1">&#39;twocpus&#39;</span> <span class="o">{</span>
+</span>                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">20</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
+<span class="hll">                  <span class="n">errorStrategy</span> <span class="o">=</span> <span class="s1">&#39;retry&#39;</span> 
+</span><span class="hll">                  <span class="n">maxRetries</span> <span class="o">=</span> <span class="mi">3</span>	
+</span><span class="hll">            <span class="o">}</span>
+</span>
            <span class="c1">// retry three times if fails and then fail</span>
-            <span class="nl">withLabel:</span> <span class="s1">&#39;retry_and_ignore&#39;</span> <span class="o">{</span>
-                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">20</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
-                <span class="n">errorStrategy</span> <span class="o">=</span> <span class="o">{</span><span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="o">?</span> <span class="s1">&#39;retry&#39;</span> <span class="o">:</span> <span class="s1">&#39;ignore&#39;</span><span class="o">}</span>
-            <span class="o">}</span>
-<span class="o">}</span>
+<span class="hll">            <span class="nl">withLabel:</span> <span class="s1">&#39;retry_and_ignore&#39;</span> <span class="o">{</span>
+</span><span class="hll">                  <span class="n">time</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">20</span><span class="o">.</span><span class="na">second</span> <span class="o">*</span> <span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">}</span>
+</span><span class="hll">                <span class="n">errorStrategy</span> <span class="o">=</span> <span class="o">{</span><span class="n">task</span><span class="o">.</span><span class="na">attempt</span> <span class="o">&lt;=</span> <span class="mi">3</span> <span class="o">?</span> <span class="s1">&#39;retry&#39;</span> <span class="o">:</span> <span class="s1">&#39;ignore&#39;</span><span class="o">}</span>
+</span><span class="hll">            <span class="o">}</span>
+</span><span class="o">}</span>
 </pre></div>
 </div>
 </section>
@@ -213,10 +213,10 @@ In this file we just include a number of single configuration files, each one fo
 <span class="n">aws</span><span class="o">.</span><span class="na">region</span> <span class="o">=</span> <span class="s1">&#39;eu-west-1&#39;</span>
 <span class="n">aws</span><span class="o">.</span><span class="na">batch</span><span class="o">.</span><span class="na">cliPath</span> <span class="o">=</span> <span class="s1">&#39;/home/ec2-user/miniconda/bin/aws&#39;</span>
 
-<span class="c1">// Please change those values with the ones we provided you for accessing the cloud</span>
-<span class="n">aws</span><span class="o">.</span><span class="na">accessKey</span> <span class="o">=</span> <span class="s1">&#39;ACCESSKEY&#39;</span>
-<span class="n">aws</span><span class="o">.</span><span class="na">secretKey</span> <span class="o">=</span> <span class="s1">&#39;SECRETKEY&#39;</span>
-
+<span class="hll"><span class="c1">// Please change those values with the ones we provided you for accessing the cloud</span>
+</span><span class="hll"><span class="n">aws</span><span class="o">.</span><span class="na">accessKey</span> <span class="o">=</span> <span class="s1">&#39;ACCESSKEY&#39;</span>
+</span><span class="hll"><span class="n">aws</span><span class="o">.</span><span class="na">secretKey</span> <span class="o">=</span> <span class="s1">&#39;SECRETKEY&#39;</span>
+</span>
 
 <span class="c1">// Here we used as and work directory for intermediate files the S3 bucket</span>
 <span class="n">workDir</span> <span class="o">=</span> <span class="s1">&#39;s3://nf-elixir/scratch&#39;</span>
