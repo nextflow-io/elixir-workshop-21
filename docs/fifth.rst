@@ -53,7 +53,7 @@ You can activate using this command line:
 
 .. literalinclude:: ../conf/retry_example.config
    :language: groovy
-   :emphasize-lines: 15,17,18,19,22,23,24,25
+   :emphasize-lines: 15,16,17,18,19,22,23,24,25
    
 
 
@@ -63,7 +63,7 @@ We can run our pipeline in AWS batch just by changing the following values in th
 
 .. literalinclude:: ../conf/awsbatch.config
    :language: groovy
-   :emphasize-lines: 9,10,11
+   :emphasize-lines: 10,11
 
 And then launching the pipeline from the local repository:
 
