@@ -88,8 +88,8 @@ Channel
 /*
  *  Read the reference file. If empty, complains                  
  */
-Channel.fromPath( params.reference, checkIfExists: true )  	// if empty, complains						                           
-    .set {reference} 						// make the channel "reads"
+reference = file( params.reference)  	// if empty, complains						                           
+   						// make the channel "reads"
 
 /*
  * MAIN workflow definition.
