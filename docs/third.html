@@ -168,8 +168,8 @@
 <span class="cm">/*</span>
 <span class="cm"> *  Read the reference file. If empty, complains                  </span>
 <span class="cm"> */</span>
-<span class="n">Channel</span><span class="o">.</span><span class="na">fromPath</span><span class="o">(</span> <span class="n">params</span><span class="o">.</span><span class="na">reference</span><span class="o">,</span> <span class="nl">checkIfExists:</span> <span class="kc">true</span> <span class="o">)</span>  	<span class="c1">// if empty, complains						                           </span>
-    <span class="o">.</span><span class="na">set</span> <span class="o">{</span><span class="n">reference</span><span class="o">}</span> 						<span class="c1">// make the channel &quot;reads&quot;</span>
+<span class="n">reference</span> <span class="o">=</span> <span class="n">file</span><span class="o">(</span> <span class="n">params</span><span class="o">.</span><span class="na">reference</span><span class="o">)</span>  	<span class="c1">// if empty, complains						                           </span>
+   						<span class="c1">// make the channel &quot;reads&quot;</span>
 
 <span class="cm">/*</span>
 <span class="cm"> * MAIN workflow definition.</span>
